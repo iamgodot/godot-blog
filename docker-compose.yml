@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  hugo:
+    image: jojomi/hugo:latest
+    restart: always
+    environment:
+      - HUGO_REFRESH_TIME=5
+      - HUGO_THEME=PaperMod
+      - HUGO_BASEURL=https://www.iamgodot.com
+    volumes:
+      - ./godot-blog:/src
+      - ./output:/output
+    networks:
+      - app-network
+
+  webserver:
+    depends_on:
+      - hugo
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./output:/usr/share/nginx/html:ro
+    environment:
+      - VIRTUAL_HOST=www.iamgodot.com
+      - LETSENCRYPT_HOST=www.iamgodot.com
+      - LETSENCRYPT_EMAIL=xzyduoduo@126.com
+      - DEFAULT_EMAIL=xzyduoduo@126.com
+    networks:
+      - app-network
+      - proxy-tier
+
+networks:
+  app-network:
+    driver: bridge
+  proxy-tier:
+    external:
+      name: nginx-proxy_proxy-tier
