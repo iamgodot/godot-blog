@@ -9,7 +9,7 @@ services:
       - HUGO_THEME=PaperMod
       - HUGO_BASEURL=https://www.iamgodot.com
     volumes:
-      - ./godot-blog:/src
+      - ./hugo:/src
       - ./output:/output
     networks:
       - app-network
