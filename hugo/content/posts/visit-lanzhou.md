@@ -1,6 +1,8 @@
 ---
 title: 游兰州
-date: 2021-07-02T09:59:49.000Z
+date: 2021-07-02T09:59:49+08:00
+categories:
+  - Travel
 draft: false
 ---
 

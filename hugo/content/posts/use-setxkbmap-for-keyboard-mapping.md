@@ -1,6 +1,8 @@
 ---
 title: Use setxkbmap for Keyboard Mapping
-date: 2021-10-16T04:57:10.000Z
+date: 2021-10-16T04:57:10+08:00
+categories:
+  - Code
 draft: false
 ---
 

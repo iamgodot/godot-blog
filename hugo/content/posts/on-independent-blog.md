@@ -1,6 +1,8 @@
 ---
 title: 论独立博客
-date: 2021-03-20T23:02:32.000Z
+date: 2021-03-20T23:02:32+08:00
+categories:
+  - Thoughts
 draft: false
 ---
 

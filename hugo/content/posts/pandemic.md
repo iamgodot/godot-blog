@@ -1,6 +1,10 @@
 ---
 title: Pandemic
-date: 2020-04-06T18:30:18.000Z
+date: 2020-04-06T18:30:18+08:00
+categories:
+  - Thoughts
+tags:
+  - netflix
 draft: false
 ---
 

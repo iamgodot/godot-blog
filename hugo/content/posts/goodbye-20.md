@@ -1,6 +1,8 @@
 ---
 title: Goodbye 20s
-date: 2021-06-14T13:02:09.000Z
+date: 2021-06-14T13:02:09+08:00
+categories:
+  - Thoughts
 draft: false
 ---
 

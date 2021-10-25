@@ -1,6 +1,8 @@
 ---
 title: 生命之光
-date: 2020-11-23T23:01:58.000Z
+date: 2020-11-23T23:01:58+08:00
+categories:
+  - Thoughts
 draft: false
 ---
 

@@ -1,6 +1,10 @@
 ---
 title: The Social Dilemma
-date: 2020-10-07T22:25:35.000Z
+date: 2020-10-07T22:25:35+08:00
+categories: 
+  - Thoughts
+tags:
+  - netflix
 draft: false
 ---
 

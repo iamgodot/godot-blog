@@ -1,6 +1,8 @@
 ---
 title: The Art of Readable Code
-date: 2020-10-31T15:54:05.000Z
+date: 2020-10-31T15:54:05+08:00
+categories:
+  - Code
 draft: false
 ---
 
