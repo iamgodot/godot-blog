@@ -7,18 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install hugo
-        run: |
-          sudo apt-get update
-          sudo apt-get install git hugo -y
       - name: Update theme
         working-directory: hugo/themes/PaperMod
         run: |
           git submodule init
           git submodule update
-      - name: Generate static files
-        working-directory: hugo
-        run: hugo
+      - name: Hugo
+        uses: klakegg/actions-hugo@1.0.0
+        with:
+          source: hugo
+          target: public
+          env: production
       - name: Sync files to server
         uses: burnett01/rsync-deployments@5.1
         with:
