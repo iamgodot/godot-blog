@@ -1,0 +1,55 @@
+baseURL: https://www.iamgodot.com
+languageCode: en-us
+title: Godot's Blog
+theme: PaperMod
+
+paginate: 5
+
+params:
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowShareButtons: false
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: false
+  ShowBreadCrumbs: false
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+
+  comments: false
+
+  homeInfoParams:
+    Title: The world is waiting for you.
+    Content:
+
+  socialIcons:
+    - name: GitHub
+      url: https://github.com/iamgodot
+    - name: RSS
+      url: /posts/index.xml
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: archive
+      name: Archive
+      url: /archive/
+      weight: 20
+    - identifier: code
+      name: Code
+      url: /categories/code/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
