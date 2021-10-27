@@ -7,7 +7,7 @@ services:
     environment:
       - HUGO_REFRESH_TIME=5
       - HUGO_THEME=PaperMod
-      - HUGO_BASEURL=https://www.iamgodot.com
+      - HUGO_BASEURL=https://iamgodot.com
     volumes:
       - ./hugo:/src
       - ./output:/output
@@ -20,10 +20,11 @@ services:
     image: nginx:alpine
     restart: unless-stopped
     volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
       - ./output:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=www.iamgodot.com
-      - LETSENCRYPT_HOST=www.iamgodot.com
+      - VIRTUAL_HOST=iamgodot.com,www.iamgodot.com
+      - LETSENCRYPT_HOST=iamgodot.com,www.iamgodot.com
       - LETSENCRYPT_EMAIL=xzyduoduo@126.com
       - DEFAULT_EMAIL=xzyduoduo@126.com
     networks:
