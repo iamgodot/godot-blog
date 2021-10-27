@@ -26,8 +26,12 @@ params:
   socialIcons:
     - name: GitHub
       url: https://github.com/iamgodot
+    - name: Twitter
+      url: https://twitter.com/iamgodot_
     - name: RSS
       url: /posts/index.xml
+    - name: Email
+      url: mailto:xugodot@gmail.com
 
 menu:
   main:
