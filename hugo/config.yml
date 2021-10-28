@@ -58,10 +58,18 @@ menu:
       name: Code
       url: /categories/code/
       weight: 30
+    - identifier: travel
+      name: Travel
+      url: /categories/travel/
+      weight: 40
+    - identifier: thoughts
+      name: Thoughts
+      url: /categories/thoughts/
+      weight: 50
     - identifier: search
       name: Search
       url: /search/
-      weight: 40
+      weight: 60
 
 outputs:
   home:
