@@ -8,21 +8,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update theme
-        working-directory: hugo/themes/PaperMod
+        working-directory: themes/PaperMod
         run: |
           git submodule init
           git submodule update
       - name: Hugo
         uses: klakegg/actions-hugo@1.0.0
         with:
-          source: hugo
           target: public
           env: production
       - name: Sync files to server
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
-          path: hugo/public/
+          path: public/
           remote_path: /home/godot/sites/godot-blog/output/
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_port: ${{ secrets.DEPLOY_PORT }}
