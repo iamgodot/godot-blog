@@ -21,7 +21,18 @@ params:
 
   homeInfoParams:
     Title: The world is waiting for you.
-    Content:
+    Content: |
+      Like many others, this is Yet Another Personal Blog.
+      I blog my thoughts about coding, traveling and exploring
+      things&details in life.
+
+      I've used Hexo, Wordpress, Ghost 4.x and decided to
+      turn back to static site generators. Now I'm happily
+      hosting my site here with Hugo&PaperMod.
+
+      For any questions or if you think we share something,
+      feel free to reach me via Email or GitHub, Twitter is fine
+      but I'm not using it a lot. Anyway, enjoy it here, welcome:)
 
   socialIcons:
     - name: GitHub
