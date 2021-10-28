@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Pandemic | Godot&#39;s Blog</title>
+<meta name="keywords" content="netflix" />
+<meta name="description" content="Pandemic: How to Prevent an Outbreak 是一部 Netflix 的原创纪录片。这部六集的短剧是在 2020 年初播出的，可以说精准地预言了今年疫情的爆发。其实，看了之后我才意识到，新冠病毒并不是大自然出其不意的袭击，只是暴风雨按部就班地来临了。
+Influenza 网上查了下，这个词语来自意大利，意思是现在常说的 flu，即流感。虽然流行性感冒和普通感冒都是由于呼吸道感染病毒导致的，但是流感的症状严重很多，传染性也更强。所以普通感冒只是自己受罪，但患上流感就要小心了。
+流感病毒以对人体的影响主要被划分为 A、B、C 三类。甲型 H1N1 病毒就属于 A 类，在 1918 的西班牙流感大流行事件中是造成全球 5 亿人感染，1.7 千万至 5 千万人死亡的罪魁祸首。在后来的一百年里还出现过很多次流感疫情，比如 2003 年起源于国内的 H5N1 禽流感，和 2009 年从墨西哥城爆发的甲型 H1N1 流感（也就是常说的猪流感），其中后者持续了一年多，估算应有 7 亿到 14 亿人感染，150,000 到 575,000 死亡。
+除了流感病毒，还有庞大的冠状病毒家族。像这次的 COVID-19，之前的非典 SARS-CoV（严重急性呼吸综合症）和 MERS-CoV（中东呼吸综合症），都是冠状病毒的变种。按照网上资料的解释，常见的冠状病毒通常会引起上呼吸道感染，让人感冒，而 SARS 和 MERS 这类变种病毒能造成比较严重的症状，如发热咳嗽、呼吸急促、甚至是肺炎和死亡。
+但这些还不是全部，因为还有更多更致命的病毒散落在世界的各个地方。埃博拉，在苏丹和刚果被发现，是一种能引起人类和其他灵长类动物产生埃博拉出血热的烈性传染病病毒。生物安全等级为 4 级，比 SARS 和艾滋病还要高一级。
+查的资料越多就越感觉敬畏，我们绝没有理由认为自己是这个星球的霸主，觉得人类无所不能，凌驾众生。
+常见的传染病分类  呼吸道传染病  流感（flu） 肺结核（tuberculosis） 百日咳（whooping cough） 麻疹（measles） 非典（SARS）   消化道传染病  细菌性痢疾（bacillary dysentery） 小儿麻痹症（polio） 蛔虫病（ascariasis） 伤寒（typhoid） 霍乱（cholera）   血液传染病  乙肝（hepatitis B） 疟疾（helopyra）   性传染病  艾滋病（AIDS） 梅毒（syphilis）    Pandemic 说回这部神奇的纪录片好了，整部剧分成了好几条故事线，但可能是想讲的内容太多，在有限的篇幅里剪辑的效果略显凌乱。不过瑕不掩瑜，下面是我试着梳理出来的各个故事梗概。">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.iamgodot.com/posts/pandemic/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d156b151269ca9f254ecd6e4c592b19e37346165a46b1b794368e59b7a6d3f36.css" integrity="sha256-0VaxUSacqfJU7NbkxZKxnjc0YWWkaxt5Q2jlm3ptPzY=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://www.iamgodot.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.iamgodot.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.iamgodot.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.iamgodot.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.iamgodot.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.83.1" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.iamgodot.com" accesskey="h" title="Godot&#39;s Blog (Alt + H)">Godot&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.iamgodot.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/archive/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/categories/code/" title="Code">
+                    <span>Code</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Pandemic
+    </h1>
+    <div class="post-meta">April 6, 2020&nbsp;·&nbsp;1 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#influenza" aria-label="Influenza">Influenza</a></li>
+                <li>
+                    <a href="#%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bc%a0%e6%9f%93%e7%97%85%e5%88%86%e7%b1%bb" aria-label="常见的传染病分类">常见的传染病分类</a></li>
+                <li>
+                    <a href="#pandemic" aria-label="Pandemic">Pandemic</a></li>
+                <li>
+                    <a href="#end" aria-label="End">End</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><a href="https://movie.douban.com/subject/34935806/">Pandemic: How to Prevent an Outbreak</a> 是一部 Netflix 的原创纪录片。这部六集的短剧是在 2020 年初播出的，可以说精准地预言了今年疫情的爆发。其实，看了之后我才意识到，新冠病毒并不是大自然出其不意的袭击，只是暴风雨按部就班地来临了。</p>
+<h1 id="influenza">Influenza<a hidden class="anchor" aria-hidden="true" href="#influenza">#</a></h1>
+<p>网上查了下，这个词语来自意大利，意思是现在常说的 flu，即流感。虽然流行性感冒和普通感冒都是由于呼吸道感染病毒导致的，但是流感的症状严重很多，传染性也更强。所以普通感冒只是自己受罪，但患上流感就要小心了。</p>
+<p>流感病毒以对人体的影响主要被划分为 A、B、C 三类。甲型 H1N1 病毒就属于 A 类，在 1918 的西班牙流感大流行事件中是造成全球 5 亿人感染，1.7 千万至 5 千万人死亡的罪魁祸首。在后来的一百年里还出现过很多次流感疫情，比如 2003 年起源于国内的 H5N1 禽流感，和 2009 年从墨西哥城爆发的甲型 H1N1 流感（也就是常说的猪流感），其中后者持续了一年多，估算应有 7 亿到 14 亿人感染，150,000 到 575,000 死亡。</p>
+<p>除了流感病毒，还有庞大的冠状病毒家族。像这次的 COVID-19，之前的非典 SARS-CoV（严重急性呼吸综合症）和 MERS-CoV（中东呼吸综合症），都是冠状病毒的变种。按照网上资料的解释，常见的冠状病毒通常会引起上呼吸道感染，让人感冒，而 SARS 和 MERS 这类变种病毒能造成比较严重的症状，如发热咳嗽、呼吸急促、甚至是肺炎和死亡。</p>
+<p>但这些还不是全部，因为还有更多更致命的病毒散落在世界的各个地方。埃博拉，在苏丹和刚果被发现，是一种能引起人类和其他灵长类动物产生埃博拉出血热的烈性传染病病毒。生物安全等级为 4 级，比 SARS 和艾滋病还要高一级。</p>
+<p>查的资料越多就越感觉敬畏，我们绝没有理由认为自己是这个星球的霸主，觉得人类无所不能，凌驾众生。</p>
+<h1 id="常见的传染病分类">常见的传染病分类<a hidden class="anchor" aria-hidden="true" href="#常见的传染病分类">#</a></h1>
+<ul>
+<li>呼吸道传染病
+<ul>
+<li>流感（flu）</li>
+<li>肺结核（tuberculosis）</li>
+<li>百日咳（whooping cough）</li>
+<li>麻疹（measles）</li>
+<li>非典（SARS）</li>
+</ul>
+</li>
+<li>消化道传染病
+<ul>
+<li>细菌性痢疾（bacillary dysentery）</li>
+<li>小儿麻痹症（polio）</li>
+<li>蛔虫病（ascariasis）</li>
+<li>伤寒（typhoid）</li>
+<li>霍乱（cholera）</li>
+</ul>
+</li>
+<li>血液传染病
+<ul>
+<li>乙肝（hepatitis B）</li>
+<li>疟疾（helopyra）</li>
+</ul>
+</li>
+<li>性传染病
+<ul>
+<li>艾滋病（AIDS）</li>
+<li>梅毒（syphilis）</li>
+</ul>
+</li>
+</ul>
+<h1 id="pandemic">Pandemic<a hidden class="anchor" aria-hidden="true" href="#pandemic">#</a></h1>
+<p>说回这部神奇的纪录片好了，整部剧分成了好几条故事线，但可能是想讲的内容太多，在有限的篇幅里剪辑的效果略显凌乱。不过瑕不掩瑜，下面是我试着梳理出来的各个故事梗概。</p>
+<ol>
+<li>Dr. Dennis Carroll，就是最开始那个白色长发的美国老头，差不多算是一个国际性防控组织的主任。在故事里他一直在越南进行禽流感的防治，也多亏了像他一样坚守在世界各地的工作者，让偏远地区的疫情也能得到及时的控制。</li>
+<li>Holly Goracke，是 KOLAHOMA 州 Jefferson County Hospital 唯一的医生。从剧中看，她应该算是那片地区的人唯一的专业医师，也因为这个原因，她基本一直生活在医院里，一个月才休息一次（可能是半个月，记不太清楚了）。而她之前的婚姻很不幸福，所以在故事的最后，为了和现在的男友（是个非常懂她的好男人）修复关系，她离开了医院，选择回归家庭生活。这部分剧情看得我很有共鸣，因为最近疫情的事情让我觉得国内的医护人员真的非常辛苦，为了病人牺牲了很多的个人时间、生活甚至生命。看来国外也是一样，没有什么天使，守护在我们前面的只是一群勇敢的普通人。</li>
+<li>Jake Glanville，一个稍微有点发福的科技创业公司 CEO，致力于世界首批 universal flu vaccine 的发明。也就是如果成功制造出来这种疫苗，大家便不需要反复地去医院检查、住院来治愈流感，可能只要打一次疫苗便能够终生免疫了。此外还有一个年轻一点的女科学家，因为作为研究对象的小猪价格昂贵，所以他们两个跑到危地马拉去搞研究，一个小猪很便宜的地方。在最后他们获取了阶段性成功，证明了疫苗在猪身上是有效的，也因此得到了盖茨基金会的赞助。希望他们能尽快地研制出对人类有效的疫苗，拯救无辜的生命。</li>
+<li>Dr. Dinesh Vijay，是印度的一位医生，剧中主要展现了他尽力救治各种被流感折磨的病人。但是由于印度的人数众多，如果疫情控制不住，那么医疗资源肯定是不够的。其实和中国的国情还是比较相似的，很多人意识不到病毒的危险，做不到基本的防护措施，所以一旦爆发，传播速度会非常快。</li>
+<li>Dr. Syra Madad，纽约健康医院（不太知道应该怎么翻译）的一位高级主管，从埃博拉的时候就开始参与到传染病的防控工作，从事这一行也是为了造福大众，感觉是一个非常善良能干的女性。同时她也信仰伊斯兰教，有两个孩子，每天除了繁忙的工作还要带孩子，不知道这是他们的文化还是她的丈夫实在是太不负责了，真真让人感慨母亲的不易和伟大。</li>
+<li>Dr. Michel Yao，应该是 WHO 的工作人员，在非洲进行埃博拉病毒的防控工作，努力阻止病毒蔓延到戈马，也就是刚果的一座城市。非洲的防疫开展起来更加艰难，因为经济落后，很多人不能理解检查站和疫苗这种事情，除了造成不必要的传染，更有人还恶意伤害志愿者们。其中有一段描述 Michel 跟家里视频的画面，之后他说自己一直想辞职回家，但是看到每天能减少一些无辜人的伤亡，就能默默地多坚持一段时间。看了特别地感动，谁都有家人，但没有这些人的坚持，可能最后所有人都逃脱不了被感染的命运。全球化面前，每一个国家和个人，都是紧密相关的。</li>
+<li>Tucson, Arizona, USA. 这里是美国墨西哥的边境，在这个临时的避难所，每天都会有几十甚至上百的移民来落脚，对于这些人，接种疫苗是必要的，但是如果没有足够的资源，那么志愿者再怎么样也无能为力。这里主要是以一位美国大妈志愿者的视角来讲述的，其中她有一句话说的很好，我们已经有足够的天灾了，不要再增加无谓的人祸。</li>
+<li>Corvallis, Oregon, USA. 这个故事主要讲述了两拨人在疫苗面前意识形态的冲突。政府那一边想增加法案，禁止不接种疫苗的孩子和其他孩子接触，比如上学或者活动。但是反对者们对此态度很激烈，他们认为这侵犯了孩子的自由，另外还有一些人针对疫苗的副作用表示抗拒。最后法庭的审判结果驳回了法案，但双方都知道这场没有硝烟的战争不会停止，只是暂时告一段落而已。</li>
+</ol>
+<p>对于最后一个故事线我很有感触，因为从自己的角度而言，既认为疫苗的普及是必要的，也一直相信捍卫自由不可或缺。在中国，这好像并不会造成任何问题，因为老百姓一向是很配合的，最多关心疫苗是不是免费的。而在自由民主至上的美国，这种意识形态上面的冲突就自然而然的凸显出来。可能并没有谁对誰錯，因为一切都是相对的。发展到最后，也许结局就是法案通过，反对者们屈从，开始慢慢接受，或者选择离开，搬到其他的州继续生活。而原因，未必是因为疫苗被证明完全无害了，而仅仅是，少数服从多数。如果看了剧集，感受会更加深刻。因为听了双方的声音之后，会觉得大家都有自己合理的理由和立场，但又不可避免地需要争执出一个结果。</p>
+<p>人总是听到自己想听到的，相信自己愿意相信的。所谓真相，所谓觉醒，可能并没有那么绝对，就好像每个人都坐在桌子的一角，唯一可以确定的只是无数视线的交汇罢了。</p>
+<h1 id="end">End<a hidden class="anchor" aria-hidden="true" href="#end">#</a></h1>
+<p>除了这部纪录片，还有很多电影都算是不同程度上预言了这次全球疫情的爆发，比如美国在 2011 年拍的《传染病》，韩国电影《流感》。只是当时人们可能觉得剧情科幻，现实中并不可能发生。现在想想多么讽刺啊。</p>
+<p>另外还推荐两部书籍：</p>
+<ul>
+<li><a href="https://book.douban.com/subject/30306429/">大流感</a></li>
+<li><a href="https://book.douban.com/subject/34949339/">致命流感</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.iamgodot.com/tags/netflix/">netflix</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.iamgodot.com/posts/the-social-dilemma/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>The Social Dilemma</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="https://www.iamgodot.com">Godot&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><footer class="footer">
+    <span>
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备20005558号-2</a>
+    </span>
+</footer>
+
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

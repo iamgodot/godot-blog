@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Code on Godot&#39;s Blog</title>
+    <link>https://www.iamgodot.com/categories/code/</link>
+    <description>Recent content in Code on Godot&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Oct 2021 04:57:10 +0800</lastBuildDate><atom:link href="https://www.iamgodot.com/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use setxkbmap for Keyboard Mapping</title>
+      <link>https://www.iamgodot.com/posts/use-setxkbmap-for-keyboard-mapping/</link>
+      <pubDate>Sat, 16 Oct 2021 04:57:10 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/posts/use-setxkbmap-for-keyboard-mapping/</guid>
+      <description>这是一篇使用（过） Linux Xorg without any DE 以及笔记本外接键盘的人才能理解其中辛酸苦痛的抒情科普文。
+TL;DR  外接键盘不要开蓝牙，直接插线，除非你乐意折腾 使用 setxkbmap 而不是 xmodmap 来做 key remapping 不要用 Xorg  The Irrational Part 上午十点零一分，端坐到显示器前，深呼吸两次。
+Ok，回滚内核版本之后 Screen Lock 卡死的问题果然消失了，我们继续。
+进入系统，先看一下昨晚的日志吧：
+... 需求目标： 1. 交换 L-Ctrl &amp;amp; Caps-Lock 2. 交换 Win &amp;amp; Alt 当前方案： 使用 xmodmap 自定义配置文件，在 startx 时执行 已知问题： 1. 系统挂起或蓝牙睡眠导致的 keyboard reconnection 会 reset 掉 Win&amp;amp;Alt 的交换 2. 之后重新执行 xmodmap 会导致 L-Ctrl&amp;amp;Caps-Lock 交换回原状，必须执行两次 后续跟进： 1. TTY console switch 快捷键不可用 2. Terminate X 快捷键 CAB(Ctrl-Alt-Backspace) 不可用 3.</description>
+    </item>
+    
+    <item>
+      <title>Use emoji in MySQL</title>
+      <link>https://www.iamgodot.com/posts/use-emoji-in-mysql/</link>
+      <pubDate>Sat, 21 Nov 2020 17:22:18 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/posts/use-emoji-in-mysql/</guid>
+      <description>最近碰到一个服务器处理请求报错，但是本身的代码逻辑没有问题，排查后发现原来是参数中包含了 emoji，导致向 MySQL 插入数据时失败了。
+解决起来倒是不麻烦，因为业务上不要求做相关的支持，所以捕捉异常之后返回错误码也就好了。但是好奇之下，做了个 MySQL 插入 emoji 的实验，发现里面还是有不少门道的。
+What&amp;rsquo;s emoji 🧐 以前的粗浅理解就是由 unicode 支持的表情字符，这次认真查了下，找到了一篇讲解很详尽的文章：Everything you need to know about emoji
+根据里面的介绍，关于 emoji 比较官方的解释：
+ Emoji are pictographs (pictorial symbols) that are typically presented in a colorful form and used inline in text. They represent things such as faces, weather, vehicles and buildings, food and drink, animals and plants, or icons that represent emotions, feelings, or activities.
+ 而 emoji 是怎么来的呢：</description>
+    </item>
+    
+    <item>
+      <title>The Art of Readable Code</title>
+      <link>https://www.iamgodot.com/posts/the-art-of-readable-code/</link>
+      <pubDate>Sat, 31 Oct 2020 15:54:05 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/posts/the-art-of-readable-code/</guid>
+      <description>最近读了《编写可读代码的艺术》这本书，感觉收获良多。如果早点了解的话，可能以前就不会犯那么多新手错误了，不过话说回来，理论总是要配合实践才能内化成自己的东西，而且书中的内容适合反复温习，一定常读常新。
+整本书的核心都在于一个原则：代码应当易于理解。所以作者在开篇就提出了可读性的概念：
+ 代码的写法应当使别人理解它所需要的时间最小化。
+ 其中可读性很容易与代码长度混淆，因为代码本身的精简达到一定程度，就难免涉及到晦涩的逻辑压缩和语言用法，而这恰恰是和易读性相悖的。另外代码是写给人看的，这里指的不一定是别人，在实际工作中更有可能是若干天后的自己，所以保证可读性不仅利人，同样利己。 以此为中心，可以发散到编码过程中的很多方面，比如基础的变量命名、代码注释、函数定义以及开发后期的文档维护、解耦重构等等。
+One of the hard things  There are only two hard things in Computer Science: cache invalidation and naming things. &amp;ndash; Phil Karlton
+ 这句名言一句道破天机，万物皆从命名始，起名字的能力实在是太重要了。不论是变量常量，还是方法类名，一旦确定名称，代码的整体风格就开始受到影响，并且一直持续下去。
+记得刚写代码的时候，并没有觉得合适的变量名称很重要，后来时间长了，慢慢开始琢磨起什么名字好，然后发现换来换去都不合适，为此绞尽脑汁，耗费的时间甚至比开发都长。现在熟练了不少，虽然有时还要再思索几下，但是命名已经比以前清晰很多了。反观周围的同事们，越是高手，在 naming 上也越得心应手，可能这也是编码能力发展的自然规律吧。
+书里介绍的各种技巧，基本都围绕在信息量和准确性两点。前者可以保证名称是足够有意义的，同时也在检验变量存在的必要性；而后者能够减少代码中重复或混淆的定义，甚至提供了借助命名 debug 的可能性。
+另外让我印象深刻的是，英文单词量有时候也会成为命名能力的瓶颈。比如对于常用的 make 来说，作为动词来描述一个操作可能并不足够清晰，更好的选择可以是 create/generate/setup/compose 等，但是英文不熟练或者词汇量有限的话，就难以在合适的时候想起来，或者要去专门查询才行。不知道未来会不会普及中文编程，不过那样难度仍在，只是从英语课切换成语文课了。
+It&amp;rsquo;s not just about code 在代码里加注释是一件很有争议的事情，因此作者也提到了很重要的一点，要明确什么时候是不需要注释的。好的代码如同优秀的文章，自成一体，但这不影响添加一些额外的说明和解释可以提高阅读理解的效率。
+广义上想，注释其实也算是另一种形式的文档。一行代码的注释，对象换成函数方法、模块文件或整个工程的话，就会演变成文字片段、README 甚至是单独的 DOCBOOK。而这些对于不需要了解逻辑细节的人来说，是比代码本身更高效的入口。
+回想自己在工作日常中，写文档的时间并不比开发少，但两者其实并不冲突，归根到底都是要把任务描述清楚，一个写给人，另外一个给机器。代码写得清晰，文档维护也会非常轻松。
+而在其他的场景中，比如开源的工具库，使用者对文档的关注度会更高，一方面会从文档的质量上评判整个项目，另一方面在使用中大部分情况也是阅读文档，而非源代码。
+Be wise, not smart 每种编程语言都少不了流程控制的部分，再加上特有的语法糖，想写出精巧的代码并不是难事。 Oneliner 非但不难，还很容易有成就感，尤其是成功地把冗长的逻辑压缩在一行空间内。
+但是这种做法的后果可能是灾难性的。抛开可读性原则不谈，这样的写法在新增 feature 和 debug 时会带来额外的成本，尤其是后者。因为排查错误的时候往往需要快速的定位和修复，而碰上复杂的条件分支和循环语句时，一是逻辑拆解浪费时间，再者想做改动也可能很困难，因为代码已经变得像个精 致的花瓶，一碰就碎了。
+不得不说没有实际的经历，很难体会到这里面的道理，看似矛盾，实则展现了一个 coder 的成长过程：一开始专注于逻辑堆叠，后期追求奇技淫巧的写法，最终回归质朴的实现方式。</description>
+    </item>
+    
+  </channel>
+</rss>

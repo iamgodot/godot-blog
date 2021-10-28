@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Godot&#39;s Blog</title>
+    <link>https://www.iamgodot.com/categories/</link>
+    <description>Recent content in Categories on Godot&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Oct 2021 04:57:10 +0800</lastBuildDate><atom:link href="https://www.iamgodot.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code</title>
+      <link>https://www.iamgodot.com/categories/code/</link>
+      <pubDate>Sat, 16 Oct 2021 04:57:10 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>https://www.iamgodot.com/categories/thoughts/</link>
+      <pubDate>Fri, 03 Sep 2021 04:23:57 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/categories/thoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel</title>
+      <link>https://www.iamgodot.com/categories/travel/</link>
+      <pubDate>Tue, 24 Aug 2021 01:22:26 +0800</pubDate>
+      
+      <guid>https://www.iamgodot.com/categories/travel/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

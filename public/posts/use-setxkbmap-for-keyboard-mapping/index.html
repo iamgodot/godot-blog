@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Use setxkbmap for Keyboard Mapping | Godot&#39;s Blog</title>
+<meta name="keywords" content="" />
+<meta name="description" content="这是一篇使用（过） Linux Xorg without any DE 以及笔记本外接键盘的人才能理解其中辛酸苦痛的抒情科普文。
+TL;DR  外接键盘不要开蓝牙，直接插线，除非你乐意折腾 使用 setxkbmap 而不是 xmodmap 来做 key remapping 不要用 Xorg  The Irrational Part 上午十点零一分，端坐到显示器前，深呼吸两次。
+Ok，回滚内核版本之后 Screen Lock 卡死的问题果然消失了，我们继续。
+进入系统，先看一下昨晚的日志吧：
+... 需求目标： 1. 交换 L-Ctrl &amp; Caps-Lock 2. 交换 Win &amp; Alt 当前方案： 使用 xmodmap 自定义配置文件，在 startx 时执行 已知问题： 1. 系统挂起或蓝牙睡眠导致的 keyboard reconnection 会 reset 掉 Win&amp;Alt 的交换 2. 之后重新执行 xmodmap 会导致 L-Ctrl&amp;Caps-Lock 交换回原状，必须执行两次 后续跟进： 1. TTY console switch 快捷键不可用 2. Terminate X 快捷键 CAB(Ctrl-Alt-Backspace) 不可用 3.">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.iamgodot.com/posts/use-setxkbmap-for-keyboard-mapping/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d156b151269ca9f254ecd6e4c592b19e37346165a46b1b794368e59b7a6d3f36.css" integrity="sha256-0VaxUSacqfJU7NbkxZKxnjc0YWWkaxt5Q2jlm3ptPzY=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://www.iamgodot.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.iamgodot.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.iamgodot.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.iamgodot.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.iamgodot.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.83.1" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.iamgodot.com" accesskey="h" title="Godot&#39;s Blog (Alt + H)">Godot&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.iamgodot.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/archive/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/categories/code/" title="Code">
+                    <span>Code</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.iamgodot.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Use setxkbmap for Keyboard Mapping
+    </h1>
+    <div class="post-meta">October 16, 2021&nbsp;·&nbsp;2 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#tldr" aria-label="TL;DR">TL;DR</a></li>
+                <li>
+                    <a href="#the-irrational-part" aria-label="The Irrational Part">The Irrational Part</a></li>
+                <li>
+                    <a href="#the-rational-part" aria-label="The Rational Part">The Rational Part</a><ul>
+                        
+                <li>
+                    <a href="#keyboard-mapping" aria-label="Keyboard mapping">Keyboard mapping</a></li>
+                <li>
+                    <a href="#about-keyboard" aria-label="About keyboard">About keyboard</a></li>
+                <li>
+                    <a href="#use-setxkbmap" aria-label="Use setxkbmap">Use setxkbmap</a></li>
+                <li>
+                    <a href="#cab" aria-label="CAB">CAB</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>这是一篇使用（过） Linux Xorg without any DE 以及笔记本外接键盘的人才能理解其中辛酸苦痛的抒情科普文。</p>
+<h1 id="tldr">TL;DR<a hidden class="anchor" aria-hidden="true" href="#tldr">#</a></h1>
+<ol>
+<li>外接键盘不要开蓝牙，直接插线，除非你乐意折腾</li>
+<li>使用 setxkbmap 而不是 xmodmap 来做 key remapping</li>
+<li>不要用 Xorg</li>
+</ol>
+<h1 id="the-irrational-part">The Irrational Part<a hidden class="anchor" aria-hidden="true" href="#the-irrational-part">#</a></h1>
+<p>上午十点零一分，端坐到显示器前，深呼吸两次。</p>
+<p>Ok，回滚内核版本之后 Screen Lock 卡死的问题果然消失了，我们继续。</p>
+<p>进入系统，先看一下昨晚的日志吧：</p>
+<pre><code>...
+需求目标：
+
+1. 交换 L-Ctrl &amp; Caps-Lock
+2. 交换 Win &amp; Alt
+
+当前方案：
+
+使用 xmodmap 自定义配置文件，在 startx 时执行
+
+已知问题：
+
+1. 系统挂起或蓝牙睡眠导致的 keyboard reconnection 会 reset 掉 Win&amp;Alt 的交换
+2. 之后重新执行 xmodmap 会导致 L-Ctrl&amp;Caps-Lock 交换回原状，必须执行两次
+
+后续跟进：
+1. TTY console switch 快捷键不可用
+2. Terminate X 快捷键 CAB(Ctrl-Alt-Backspace) 不可用
+3. Keyboard backlight
+...
+</code></pre><p>唔，大概记起来了，昨晚改用了 setxkbmap 之后应该可以解决重连的问题了，不过奇怪的是 ctrl:swapcaps 的 option 一直没有生效，折腾到半夜也没好..</p>
+<p>难道是有什么地方又去执行 xmodmap 了？奇怪，在 .xinitrc 里面已经把判断代码注释掉了呀，不管了，删除 ~/.Xmodmap 再说，反正是个软链接。</p>
+<p>哈，居然成功了！看来就是这个原因，估计这也是已知问题 1 的根源，xmodmap 的设置被 setxkbmap 重置了，果然直接用后者是明智的。</p>
+<p>不过可惜之前查了半天才解决的 .xinitrc 里面 xmodmap 执行顺序问题了：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $HOME/.Xmodmap <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    <span style="color:#f92672">(</span>sleep 1; xmodmap $HOME/.Xmodmap<span style="color:#f92672">)</span> &amp;
+<span style="color:#66d9ef">fi</span>
+
+exec i3
+...
+</code></pre></div><p>虽然多花了 1s 的开机时间，但毕竟规避掉了 xmodmap 设置被 wm 莫名其妙 reset 的难点，不过现在也不需要了，唔，白搞了半天..</p>
+<p>Setxkbmap 的 rule setting 就是好，这下插拔外接键盘 USB 也不会 reset 改键映射了。不过如果用蓝牙的话好像还不够，至少得配置 udev rule 开启蓝牙键盘唤醒再 run 个 remapping 的脚本才好，如此剩下就是背光了&hellip;</p>
+<p>咦，好像又过去两个小时了？</p>
+<p>&hellip;</p>
+<p>站起来，默默找出键盘连接线，插好，保存唯一的 setxkbmap 配置，重启。</p>
+<p>进入系统，改键映射正常，拔开 USB，重插，一切正常。唔，背光真好看。</p>
+<p>看下时间，五分钟。唔，终于清静了。</p>
+<h1 id="the-rational-part">The Rational Part<a hidden class="anchor" aria-hidden="true" href="#the-rational-part">#</a></h1>
+<h2 id="keyboard-mapping">Keyboard mapping<a hidden class="anchor" aria-hidden="true" href="#keyboard-mapping">#</a></h2>
+<p>用惯 Vim 的人可能都会有改键的需求，L-Ctrl &lt;-&gt; Caps-Lock 或者 Escape &lt;-&gt; Caps-Lock 等等。</p>
+<p>另外 Mac 上面的 Option | Command 对应到 Windows 键盘是 Win | Alt, 我的习惯是把 Alt 当 Option 用，所以要换到左边去。</p>
+<h2 id="about-keyboard">About keyboard<a hidden class="anchor" aria-hidden="true" href="#about-keyboard">#</a></h2>
+<p>键盘的原理大概是每个按键都有对应的（十六进制）scancode，在内核层 scancode 会被映射会 keycode，而在 X 中（比如 xmodmap）会进一步把 keycode 对应到不同的 keysym，比如 <code>keycode 38 = a A</code> 就代表 keycode 为 38 的键会输出字母 a，如果配合 Shift 键则输入 A.</p>
+<p>而 xmodmap 改键的原理也是通过修改 keycode 的对应关系来实现的，只是在配置文件中还可以使用更方便的命令比如 clear/remove/add 来描述。</p>
+<p>另外 xmodmap 还支持通过修改 pointer 参数来支持触摸屏滚动的方向，比如像 Mac 一样，手指上滑让页面下翻。</p>
+<p>但是 xmodmap 只适合做比较简单的自定义，毕竟写起来复杂，还容易被 setxkbmap 覆盖。</p>
+<h2 id="use-setxkbmap">Use setxkbmap<a hidden class="anchor" aria-hidden="true" href="#use-setxkbmap">#</a></h2>
+<p>setxkbmap 使用起来很简单，如果实现我自己的需求，想要开机生效的话，直接在 .xinitrc 中加入一行命令即可：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setxkbmap -option ctrl:swapcaps,altwin:swap_lalt_lwin
+</code></pre></div><p>如果支持插拔的话，则要给 Xorg 增加配置文件（如 /etc/X11/xorg.conf.d/00-keyboard.conf）：</p>
+<pre><code>Section &quot;ServerFlags&quot;
+	Option &quot;DontZap&quot; &quot;False&quot;
+EndSection
+
+Section &quot;InputClass&quot;
+        Identifier &quot;system-keyboard&quot;
+        MatchIsKeyboard &quot;on&quot;
+        Option &quot;XkbOptions&quot; &quot;ctrl:swapcaps,altwin:swap_lalt_lwin,terminate:ctrl_alt_bksp&quot;
+EndSection
+</code></pre><h2 id="cab">CAB<a hidden class="anchor" aria-hidden="true" href="#cab">#</a></h2>
+<p>那么上面配置文件里面的 ServerFlags 和 option 中的 terminate:ctrl_alt_bksp 是做什么的？</p>
+<p>就是来支持 CAB(Ctrl-Alt-Backspace) 快捷键关闭当前 X 程序的。这很有用，尤其是在 X window 卡死没有响应的时候。</p>
+<p>当然 Ctrl-Alt-Fx 切换 tty 或者强制关机也没什么不可以的</p>
+<hr>
+<p>WM 也好，XDG 的那些 DE 也好（GNOME/KDE/&hellip;），X 战警们的难题永无止境，然而时间有限，不得不做取舍的我只好以此纪念无辜逝去的时间以及无数个奋战到深夜的自己。</p>
+<hr>
+<p><em>References</em></p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Xmodmap">https://wiki.archlinux.org/title/Xmodmap</a></li>
+<li><a href="https://wiki.archlinux.org/title/Xorg/Keyboard_configuration">https://wiki.archlinux.org/title/Xorg/Keyboard_configuration</a></li>
+<li><a href="http://www.linuxintro.org/wiki/Understand_how_keyboards_work">http://www.linuxintro.org/wiki/Understand_how_keyboards_work</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="next" href="https://www.iamgodot.com/posts/if-by-life-you-were-deceived/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>假如生活欺骗了你</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="https://www.iamgodot.com">Godot&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><footer class="footer">
+    <span>
+        <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备20005558号-2</a>
+    </span>
+</footer>
+
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
