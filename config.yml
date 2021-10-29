@@ -38,7 +38,7 @@ params:
       hosting my site here with Hugo&PaperMod.
       -
       - For any questions or if you think we share something,
-      feel free to reach me via Email or GitHub, Twitter is fine
+      feel free to reach me by Telegram or Email, Twitter is fine
       but I'm not using it a lot. Anyway, enjoy it here, welcome.
 
   socialIcons:
@@ -46,6 +46,8 @@ params:
       url: https://github.com/iamgodot
     - name: Twitter
       url: https://twitter.com/iamgodot_
+    - name: Telegram
+      url: https://t.me/godotami
     - name: RSS
       url: /posts/index.xml
     - name: Email
