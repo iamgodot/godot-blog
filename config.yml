@@ -19,6 +19,13 @@ params:
 
   comments: false
 
+  assets:
+    favicon: icons/favicon.ico
+    favicon16x16: icons/favicon-16x16.png
+    favicon32x32: icons/favicon-32x32.png
+    apple_touch_icon: icons/apple-touch-icon.png
+    android-chrome: icons/android-chrome-512x512.png
+
   homeInfoParams:
     Title: The world is waiting for you
     Content: |
