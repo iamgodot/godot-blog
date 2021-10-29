@@ -1,17 +1,48 @@
 ---
-title: "About"
-date: 2021-10-25T18:01:59+08:00
+title:
+date:
 draft: false
+showreadingtime: false
+showtoc: false
 ---
 
-对我来说，博客是集写作、记录和坚持于一身的娱乐项目，所以即使懒惰并且屡次半途而废，我仍然没有停下折腾这件事的脚步。
+# About Me
 
-为了让自己满意，就不得不多付出些努力，比如写些什么内容，再比如写成什么风格，又或者把网站做成什么样子。
+I work on *Web Development* and write *Python* code mostly. My interests spread on *Open Source*, *Linux Distros*,
+*Command Line* and a lot more. BTW, I use *Arch*(sarcastic meaning).
 
-根据维基百科，[个人博客](https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%AA%8C#%E7%A7%8D%E7%B1%BB)是指个人持续性的日记或评论。按日记来说，自然与平常生活脱不开关系，比如工作、旅行或其他的见闻。基于目前的状态，除了编程和游记，免不了要多写些平日的所思所想。
+Things I would keep on *preaching and practicing* :
 
-至于[写作风格](https://zh.wikipedia.org/wiki/%E5%86%99%E4%BD%9C%E9%A3%8E%E6%A0%BC)，大概是个很难捉摸的东西。上面解释得很好，言之有物代表了有意义的输出，这点毋庸置疑。言简意赅则更取决于个人，有时还和内容相关。在我看来，通俗易懂的文字和自成一体的表达，是最值得注重的两点。
+- Be kind
+- Reading
+- Exercising
+- *Minimalism*
+- Exploring the world
 
-现在的互联网博客五花八门，无论是现成平台还是造轮子，Self-hosting or Third-party，一个网站可以关注的方方面面有很多：后台编辑，网页样式，性能优化，访问统计，数据备份... 最近从 WordPress 迁移到 Ghost，越来越意识到，工具永远都在迭代，变得更好用，而不变的是创作本身。
+Tools I found *useful and elegant* :
 
-Anyway, just keep blogging.
+- [Neovim](https://neovim.io/)
+- [Typora](https://typora.io/)
+- [Obsidian](https://obsidian.md/)
+- [Hugo](https://gohugo.io/)
+- [Picgo](https://picgo.github.io/PicGo-Doc/en/guide/#picgo-is-here)
+- [Taskito](https://taskito.io/)
+- [Google Keep](https://keep.google.com/)
+
+For dreams, *an independent developer and freelancer* sounds pretty cool.
+
+# About the Site
+
+As mentioned in homepage, I've tried various platforms, while ending up with *Hugo*.
+
+Several reasons to get back on a static page generator:
+
+1. No more import&export via miscellaneous formats.
+1. With *Picgo* I can easily manage image uploading.
+1. I got to use local editors such as *Vim* and *Typora*.
+1. [Shortcodes](https://gohugo.io/content-management/shortcodes/) enforcement to plain *Markdown*.
+1. [Multi Comment systems integration](https://gohugo.io/content-management/comments/#alternatives).
+
+*Hugo* files of this site is maintained [here](https://github.com/iamgodot/godot-blog), and by *GitHub Actions*
+[an update workflow](https://github.com/iamgodot/godot-blog/blob/master/.github/workflows/update.yml)
+will be triggered upon new commits for auto-deployment.
