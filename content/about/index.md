@@ -9,7 +9,7 @@ showtoc: false
 # About Me
 
 I work on *Web Development* and write *Python* code mostly. My interests spread on *Open Source*, *Linux Distros*,
-*Command Line* and a lot more. BTW, I use *Arch*(sarcastic meaning).
+*Command Line* and a lot more. BTW, I use *Arch* (sarcastic meaning).
 
 Things I would keep on *preaching and practicing* :
 
@@ -29,7 +29,7 @@ Tools I found *useful and elegant* :
 - [Taskito](https://taskito.io/)
 - [Google Keep](https://keep.google.com/)
 
-For dreams, *an independent developer and freelancer* sounds pretty cool.
+As for dreams, *freelance developer* sounds pretty cool.
 
 # About the Site
 
