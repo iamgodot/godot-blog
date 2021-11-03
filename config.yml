@@ -85,3 +85,5 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+googleAnalytics: UA-157042624-1
