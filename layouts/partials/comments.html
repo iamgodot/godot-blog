@@ -1,0 +1,10 @@
+{{ if .Site.Params.comments }}
+<script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+<div id="waline"></div>
+<script>
+Waline({
+  el: '#waline',
+  serverURL: 'https://waline-godot-blog-j50sxl97y-iamgodot.vercel.app',
+});
+</script>
+{{ end }}

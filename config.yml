@@ -17,7 +17,7 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
 
-  comments: false
+  comments: true
 
   assets:
     favicon: icons/favicon.ico
