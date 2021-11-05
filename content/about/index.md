@@ -4,6 +4,7 @@ date:
 draft: false
 showreadingtime: false
 showtoc: false
+comments: false
 ---
 
 # About Me
