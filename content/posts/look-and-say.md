@@ -93,5 +93,5 @@ def find_next(num: str):
 
 *References*
 
-- https://en.wikipedia.org/wiki/Look-and-say_sequence
-- https://leetcode-cn.com/problems/count-and-say/
+- [Look and say - Wikipedia](https://en.wikipedia.org/wiki/Look-and-say_sequence)
+- [Count and say - Leetcode](https://leetcode-cn.com/problems/count-and-say/)

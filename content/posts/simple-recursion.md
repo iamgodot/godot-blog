@@ -6,7 +6,7 @@ categories:
 draft: false
 ---
 
-近来刷题，发现递归实在是一种很神奇的写法。对于有的题目，用循环实现思路很清晰，改成递归却变得非常抽象；另一些相反，递归的做法既简洁又容易理解，但换成迭代就怎样都不明白了。经过几次痛苦的思考之后，我发现其中还是有迹可循的，按照套路来做，至少思路不会走得太偏。
+近来刷题，觉得递归实在神奇。对于有的题目，用循环实现思路很清晰，改成递归却变得非常抽象；另一些相反，递归的做法既简洁又容易理解，但换成迭代就怎样都不明白了。经过几次痛苦的思考之后，我发现其中还是有迹可循的，按照套路来做，至少思路不会走得太偏。
 
 在维基上面发现的关于递归的笑话：
 
@@ -113,11 +113,11 @@ def fib(n):
 def fib(n):
     if n <= 1:
         return n
-    
+
     x, y = 0, 1
     for _ in range(1, n):
         x, y = y, x + y
-    
+
     return y
 ```
 
@@ -226,5 +226,5 @@ def inorder(root):
 
 *References*
 
-- https://en.wikipedia.org/wiki/Recursion
-- https://leetcode-cn.com/circle/article/koSrVI/
+- [Recursion - Wikipedia](https://en.wikipedia.org/wiki/Recursion_(computer_science))
+- [如何写递归 - Leetcode](https://leetcode-cn.com/circle/article/koSrVI/)

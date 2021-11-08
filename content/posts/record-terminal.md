@@ -57,5 +57,6 @@ draft: false
 
 *References*
 
-- https://github.com/asciinema/asciinema
-- https://dstein64.github.io/gifcast/
+- [Asciinema - 录制终端工具](https://github.com/asciinema/asciinema)
+- [Gifcast - 转换 cast 文件为 GIF](https://dstein64.github.io/gifcast/)
+
