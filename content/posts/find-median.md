@@ -10,7 +10,7 @@ draft: false
 
 早上起不来，于是刷手机清醒一下，突然看到一个 ACMer 楼主提到自己没有刷过 Leetcode，面试的时候差点儿被打脸了。
 
-看了一下题目，要求是 O(logn) 的复杂度，默默想了想，也没有特别清晰的思路。
+看了一下题目，要求是 O(logn) 的复杂度，默默想了想，没有特别清晰的思路。
 
 结果翻了翻评论，很多人都在蜻蜓点水般地表示二分查找不断分割就可以了。
 
@@ -20,7 +20,7 @@ draft: false
 
 > 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数。
 
-我本来的想法是排序和双指针都可以解决，但就算双指针也只能达到 O(m+n) 的线性复杂度，再优化感觉只能二分了。
+我本来的想法是归并之后计算中位数，但只能做到 O(m+n)，再优化感觉只能二分了。
 
 于是又开始想分别取两个数组的中位数，比较之后就可以各扔掉一半，然后对两个折半的数组继续取中位数比较。
 
@@ -32,7 +32,7 @@ draft: false
 
 结果等到看完标答后我才反应过来自己错在哪里了，这是后话。（因为 m 和 n 不一定一样大，所以显然折半的逻辑不对）
 
-最优的解决方案是可以做到 O(log min(m, n)) 的，核心其实也是二分法，不过思路要复杂一些：
+最优的解决方案是可以做到 O(log min(m, n)) 的，核心也是二分法，不过思路要复杂一些：
 
 1. 首先明确中位数的定义。对于奇数个数字来说是最中间的元素，偶数则是中间两个元素的平均值。
 2. 要做的是将两个数组各分一刀，假设划分的下标分别是 i 和 j，那么 nums1 被分成 nums1[0, i], nums1[i:]，而 nums2 分为 nums2[0, j], nums2[j:].
@@ -48,7 +48,7 @@ draft: false
                1. 如果 i=0，说明 nums1 的左半部分为空，那么就假设这里的最大值为无限小，这样比较的话就相当于只考虑 nums2 的左半部分了。
                2. 如果 i=m，说明 nums1 的右半部分为空，那么就假设这里的最小值为无限大，这样比较的话就相当于只考虑 nums2 的右半部分了。
 
-下面上代码：
+上代码：
 
 ```python
 def find_median(nums1, nums2):
@@ -94,16 +94,49 @@ def find_median(nums1, nums2):
 
 最后来看一下这种方法的复杂度，因为保证了 nums1 较短，所以二分得到的时间复杂度为 O(logmin(m, n))，空间复杂度 O(1).
 
-虽说上面的解法最优，但继续思考了下并不是一个很通用的方案，可以找到中位数，但对于求 k 位数这种问题就解决不了了。次优的解法虽然时间复杂度为 O(log(m+n))，但是个更普适的方案，思路大致如下：
+虽说上面的解法最优，但并不是一个很通用的方案，可以找到中位数，但对于求 k 位数这种问题就解决不了了。又看了下官方次优的解法，虽然时间复杂度为 O(log(m+n))，但是更普适：
 
 1. 分别找出两个数组的 k/2-1 的位置，那么这个位置前面有 k/2-1 个元素。
-2. 两个位置上的元素分别成为 pivot1, pivot2，如果 pivot1 的值小于 pivot2 的值，则可以舍弃 pivot1 及前面的 k/2-1 个元素。
-3. 原因是所有的元素中大于 pivot1 value 的数量不会超过 2*(k/2-1) 个，pivot1 最多也就是第 k-1 大的元素。所以 pivot1 连同前面的元素都可以忽略不计了。
+2. 两个位置上的元素分别成为 pivot1, pivot2，如果 pivot1 的值小于 pivot2 的值，则可以舍弃 pivot1 及前面的 k/2-1 个元素。（因为即使 pivot2 前面的元素都小于 pivot1，pivot1 最多也就是第 k-1 大的元素，中位数肯定不在其中）
 4. 去掉了这部分元素之后 nums1 就相当于变短了，而 nums2 不变，于是基于这两个数组继续。
-5. 同时也要记得更新 k 值，因为已经去掉一部分元素了，所以 k=k-k/2 变为了原来的一半。
-6. 继续此流程。当然也要空数组、下标越界和 k=1 的边界情况。
+5. 同时也要记得更新 k 值，因为已经去掉一部分元素了，所以 k 变为了原来的一半。
+6. 继续此流程。当然过程中还要注意空数组、下标越界和 k=1 等边界情况。
 
-此处不贴代码了，见官方标答。
+~~此处不贴代码了，见官方答案。~~ 实现代码如下：
+
+```python
+def find_median(nums1, nums2):
+    def find_kth_element(k, nums1, nums2):
+        '''注意 k 是从 1 开始而不是 0'''
+        m, n = len(nums1), len(nums2)
+        start1, start2 = 0, 0
+        while True:
+            if start1 == m:
+                return nums2[start2 + k - 1]
+            if start2 == n:
+                return nums1[start1 + k - 1]
+            if k == 1:
+                return min(nums1[start1], nums2[start2])
+            # 因为 if 检查在上面，所以要取 min 防止下面 nums1[i] 或 nums2[j] 越界
+            i = min(start1 + k // 2 - 1, m - 1)
+            j = min(start2 + k // 2 - 1, n - 1)
+            if nums1[i] <= nums2[j]:
+                # k 的更新基于 start1，所以先改 k 再改 start1
+                k -= i - start1 + 1
+                start1 = i + 1
+            else:
+                k -= j - start2 + 1
+                start2 = j + 1
+
+    length = len(nums1) + len(nums2)
+    if length % 2 == 1:
+        return find_kth_element(length // 2 + 1, nums1, nums2)
+    else:
+        return (
+            find_kth_element(length // 2, nums1, nums2)
+            + find_kth_element(length // 2 + 1, nums1, nums2)
+        ) / 2
+```
 
 ---
 
@@ -114,4 +147,4 @@ def find_median(nums1, nums2):
 *References*
 
 - [Media of two sorted arrays 官方答案 - Leetcode](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/)
-- [另外一个答案 - Leetcode](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/he-bing-yi-hou-zhao-gui-bing-guo-cheng-zhong-zhao-/)
+- [个人觉得比较容易理解的答案 - Leetcode](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/he-bing-yi-hou-zhao-gui-bing-guo-cheng-zhong-zhao-/)
