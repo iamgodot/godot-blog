@@ -133,6 +133,6 @@ WM 也好，XDG 的那些 DE 也好（GNOME/KDE/...），X 战警们的难题永
 
 *References*
 
-- https://wiki.archlinux.org/title/Xmodmap
-- https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
-- http://www.linuxintro.org/wiki/Understand_how_keyboards_work
+- [Xmodmap - Archwiki](https://wiki.archlinux.org/title/Xmodmap)
+- [Xorg keyboard configuration - Archwiki](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration)
+- [Understand how keyboards work](http://www.linuxintro.org/wiki/Understand_how_keyboards_work)
