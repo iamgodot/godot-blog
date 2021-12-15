@@ -6,6 +6,10 @@ theme: PaperMod
 paginate: 5
 
 params:
+  plausible:
+    enable: true
+    domain: iamgodot.com
+
   defaultTheme: auto
   disableThemeToggle: false
 
@@ -87,3 +91,7 @@ outputs:
     - JSON
 
 googleAnalytics: UA-157042624-1
+
+module:
+  imports:
+    path: github.com/divinerites/plausible-hugo
