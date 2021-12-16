@@ -1,22 +1,36 @@
 name: update
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
-      - name: Update theme
-        working-directory: themes/PaperMod
-        run: |
-          git submodule init
-          git submodule update
-      - name: Hugo
-        uses: klakegg/actions-hugo@1.0.0
         with:
-          target: public
-          env: production
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Build
+        run: hugo --minify
+
       - name: Sync files to server
         uses: burnett01/rsync-deployments@5.1
         with:
