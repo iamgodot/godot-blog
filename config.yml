@@ -62,18 +62,6 @@ menu:
       name: Archive
       url: /archive/
       weight: 20
-    - identifier: code
-      name: Code
-      url: /categories/code/
-      weight: 30
-    - identifier: travel
-      name: Travel
-      url: /categories/travel/
-      weight: 40
-    - identifier: thoughts
-      name: Thoughts
-      url: /categories/thoughts/
-      weight: 50
     - identifier: search
       name: Search
       url: /search/
