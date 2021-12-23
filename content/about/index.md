@@ -35,8 +35,7 @@ As for dreams, *freelance developer* sounds pretty cool.
 # About the Site
 
 As mentioned in homepage, I've tried various platforms, while ending up with *Hugo*.
-
-Several reasons to get back on a static page generator:
+There are several(and more) reasons to get back on a static page generator:
 
 1. No more import&export via miscellaneous formats.
 1. With *Picgo* I can easily manage image uploading.
