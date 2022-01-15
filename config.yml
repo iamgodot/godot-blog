@@ -54,18 +54,26 @@ params:
 
 menu:
   main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
     - identifier: about
       name: About
       url: /about/
-      weight: 10
+      weight: 20
     - identifier: archive
       name: Archive
       url: /archive/
-      weight: 20
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
     - identifier: search
       name: Search
       url: /search/
-      weight: 60
+      weight: 50
 
 outputs:
   home:
