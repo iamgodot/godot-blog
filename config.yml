@@ -21,7 +21,7 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
 
-  comments: true
+  comments: false
 
   assets:
     favicon: icons/favicon.ico
@@ -37,8 +37,8 @@ params:
         I've used Hexo, Wordpress, Ghost 4.x before, and now
         I'm hosting this site with Hugo.
       -
-      - Feel free to leave a comment, you can also reach me by
-        Telegram or Email. Anyway, enjoy it here, welcome.
+      - Feel free to reach me by Telegram or Email.
+        Anyway, enjoy it here, welcome.
 
   socialIcons:
     - name: GitHub
