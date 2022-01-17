@@ -3,6 +3,10 @@ title: "Sourcecode of Python Heap Queue"
 date: 2021-11-29T23:26:37+08:00
 categories:
   - Code
+tags:
+  - sourcecode
+  - python
+  - dsa
 draft: false
 ---
 

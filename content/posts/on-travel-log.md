@@ -3,6 +3,8 @@ title: 论游记
 date: 2021-08-18T08:20:55+08:00
 categories:
   - Thoughts
+tags:
+  - essay
 draft: false
 ---
 

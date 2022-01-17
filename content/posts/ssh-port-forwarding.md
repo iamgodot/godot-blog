@@ -3,6 +3,8 @@ title: "About SSH Port Forwarding"
 date: 2021-12-22T11:36:49+08:00
 categories:
   - Code
+tags:
+  - network
 draft: false
 ---
 

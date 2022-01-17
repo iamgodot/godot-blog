@@ -3,6 +3,8 @@ title: "Even Dead, You're The Hero"
 date: 2021-12-14T20:43:11+08:00
 categories:
   - Thoughts
+tags:
+  - essay
 draft: false
 ---
 

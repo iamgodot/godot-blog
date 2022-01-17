@@ -3,6 +3,8 @@ title: Use emoji in MySQL
 date: 2020-11-21T17:22:18+08:00
 categories:
   - Code
+tags:
+  - mysql
 draft: false
 ---
 

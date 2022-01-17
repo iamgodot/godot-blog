@@ -3,6 +3,8 @@ title: "From Wireshark to Linux Capabilities"
 date: 2021-11-21T13:39:25+08:00
 categories:
   - Code
+tags:
+  - linux
 draft: false
 ---
 

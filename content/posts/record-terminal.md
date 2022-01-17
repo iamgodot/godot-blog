@@ -3,6 +3,9 @@ title: "Record Terminal as GIF"
 date: 2021-11-07T21:35:44+08:00
 categories:
   - Code
+tags:
+  - project
+  - python
 draft: false
 ---
 

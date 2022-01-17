@@ -3,6 +3,8 @@ title: "Numeric Strings in Python"
 date: 2021-11-21T17:44:36+08:00
 categories:
   - Code
+tags:
+  - python
 draft: false
 ---
 

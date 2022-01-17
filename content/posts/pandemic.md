@@ -5,6 +5,7 @@ categories:
   - Thoughts
 tags:
   - netflix
+  - 电影
 draft: false
 ---
 
