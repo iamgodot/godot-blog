@@ -33,12 +33,11 @@ params:
   homeInfoParams:
     Title: The world is waiting for you
     Content: |
-      - Personal blog of thoughts in coding and life exploring.
-        I've used Hexo, Wordpress, Ghost 4.x before, and now
-        I'm hosting this site with Hugo.
+      - This is a personal blog of coding and life exploring.
+        After having used Hexo, Wordpress and Ghost 4.x, now
+        I'm hosting the site with Hugo.
       -
-      - Feel free to reach me by Telegram or Email.
-        Anyway, enjoy it here, welcome.
+      - Feel free to reach me by Telegram or Email. Enjoy it here, welcome.
 
   socialIcons:
     - name: GitHub
