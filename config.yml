@@ -10,8 +10,8 @@ params:
     enable: true
     domain: iamgodot.com
 
-  defaultTheme: auto
-  disableThemeToggle: false
+  defaultTheme: dark
+  disableThemeToggle: true
 
   ShowShareButtons: false
   ShowReadingTime: true
