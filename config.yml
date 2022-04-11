@@ -30,14 +30,14 @@ params:
     apple_touch_icon: icons/apple-touch-icon.png
     android-chrome: icons/android-chrome-512x512.png
 
-  homeInfoParams:
-    Title: The world is waiting for you
-    Content: |
-      - This is a personal blog of coding and life exploring.
-        After having used Hexo, Wordpress and Ghost 4.x, now
-        I'm hosting the site with Hugo.
-      -
-      - Feel free to reach me by Telegram or Email. Enjoy it here, welcome.
+  profileMode:
+    enabled: true
+    title: "It's a leap of faith."
+    subtitle: ""
+    imageUrl: "icons/profile.png"
+    imageTitle: ""
+    imageWidth: 120
+    imageHeight: 120
 
   socialIcons:
     - name: GitHub
