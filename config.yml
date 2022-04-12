@@ -17,6 +17,7 @@ params:
   plausible:
     enable: true
     domain: iamgodot.com
+    selfhosted_domain: "plausible.iamgodot.com"
 
   defaultTheme: dark
   disableThemeToggle: true
