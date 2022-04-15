@@ -18,6 +18,8 @@ params:
     enable: true
     domain: iamgodot.com
     selfhosted_domain: "plausible.iamgodot.com"
+    debug: false
+    gitstar: false
 
   defaultTheme: dark
   disableThemeToggle: true
