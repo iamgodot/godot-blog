@@ -1,5 +1,5 @@
 ---
-title: "Sourcecode of Python Logging"
+title: "Python Logging 源码分析"
 date: 2022-04-09T09:52:51+08:00
 draft: false
 mermaid: true
@@ -201,7 +201,7 @@ classDiagram
 
 {{</mermaid>}}
 
-此时可以清晰地看到 Logger/Filter/Handler/Formatter 几个组件以及它们之间的关系。Logging 的实现代码非常 OOP，但并不是很 Pythonic，比如一些不必要的 Setter/Getter，本应该却没有使用 `with` 的地方（大量线程锁的获取和释放），还有 `camelCase` 的函数命名等等。不过鉴于这个模块出现得很早，可能背了不少历史包袱吧。
+可以清晰地看到 Logger/Filter/Handler/Formatter 几个组件以及它们之间的关系。Logging 的实现代码非常 OOP，但并不是很 Pythonic，比如一些不必要的 Setter/Getter，本应该却没有使用 `with` 的地方（大量线程锁的获取和释放），还有 `camelCase` 的函数命名等等。不过鉴于这个模块出现得很早，可能背了不少历史包袱吧。
 
 ## 线程安全
 
@@ -275,7 +275,7 @@ class Handler(Filterer):
         """
         self.lock = threading.RLock()
         _register_at_fork_reinit_lock(self)
-        
+
     def handle(self, record):
         rv = self.filter(record)
         if rv:
@@ -335,7 +335,7 @@ class Manager(object):
         finally:
             _releaseLock()
         return rv
-    
+
     # 这两个方法会在创建 Logger 时更新相关的父子节点
     def _fixupParents(self, alogger):
         """
@@ -399,6 +399,6 @@ class Manager(object):
 
 *References*
 
-- [Logging HOWTO](https://docs.python.org/3/howto/logging.html)
-- [Logging Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
-- [Hitchhiker's guide](https://docs.python-guide.org/writing/logging/)
+- [Logging HOWTO - Python Docs](https://docs.python.org/3/howto/logging.html)
+- [Logging Cookbook - Python Docs](https://docs.python.org/3/howto/logging-cookbook.html)
+- [Logging - The Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/logging/)
