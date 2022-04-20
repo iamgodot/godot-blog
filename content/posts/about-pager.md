@@ -1,9 +1,13 @@
 ---
-title: "About Pager"
+title: "关于 Pager"
 date: 2022-04-02T14:09:53+08:00
 tags:
   - python
 draft: false
+keywords:
+  - Python pager
+  - Python help pager
+  - Pydoc pager
 ---
 
 好久没有更新了，最近研究了下如何用 Python 实现 Pager 的功能，这里指的是 Terminal 中的 Paging 程序，比如 `less`。

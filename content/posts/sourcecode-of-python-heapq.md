@@ -1,13 +1,16 @@
 ---
-title: "Sourcecode of Python Heap Queue"
+title: "Python heapq 源码阅读"
 date: 2021-11-29T23:26:37+08:00
 categories:
   - Code
 tags:
-  - sourcecode
   - python
   - dsa
 draft: false
+keywords:
+  - Python heapq 模块
+  - Python heapq 用法
+  - Python 堆队列
 ---
 
 Heap 作为一种重要的数据结构，有许多应用场景，比如优先级队列，每次出队的都是最大值或者最小值的元素。很多语言都集成了相关实现，比如 Java 的 PriorityQueue，而 Python 提供了 heapq 模块。

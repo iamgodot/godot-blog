@@ -1,11 +1,15 @@
 ---
-title: "About SSH Port Forwarding"
+title: "关于 SSH 端口转发"
 date: 2021-12-22T11:36:49+08:00
 categories:
   - Code
 tags:
   - network
 draft: false
+keywords:
+  - SSH 端口转发
+  - SSH 隧道
+  - SSH 内网穿透
 ---
 
 SSH 的端口转发很实用，但我总觉得难以理解和记忆，直到最近才有所好转。

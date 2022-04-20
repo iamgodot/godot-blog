@@ -1,9 +1,14 @@
 ---
-title: "About HTTP Auth"
+title: "关于 HTTP Auth"
 date: 2022-01-28T10:16:19+08:00
 tags:
   - HTTP
 draft: false
+keywords:
+  - HTTP 认证
+  - OAuth 认证
+  - jwt 认证
+  - Digest 认证
 ---
 
 Auth 代表了 Authentication 和 Authorization 两个概念，也就是认证与授权。基于 HTTP，两者得以遵循一定的标准，SSL/TLS 之后，又出现了 OAuth 2.0，让授权也简单了许多。

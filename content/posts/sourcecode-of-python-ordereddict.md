@@ -1,13 +1,16 @@
 ---
-title: "SourceCode of Python OrderedDict"
+title: "Python OrderedDict 实现 LRU 缓存"
 date: 2021-11-28T17:50:51+08:00
 categories:
   - Code
 tags:
-  - source
   - python
   - dsa
 draft: false
+keywords:
+  - Python OrderedDict 用法
+  - Python OrderedDict 实现 LRU
+  - Python 实现 LRU 缓存
 ---
 
 LRUCache 是一种经典的缓存机制，它的基本思路是按照最近使用的时间对元素排序，在清理时优先把搁置最久的删除掉。

@@ -1,9 +1,13 @@
 ---
-title: "Closure in Python"
+title: "Python 中的闭包"
 date: 2022-01-29T17:55:18+08:00
 tags:
   - python
 draft: false
+keywords:
+  - Python 闭包
+  - Python 的 Closure 是什么
+  - Python Closure
 ---
 
 ```python

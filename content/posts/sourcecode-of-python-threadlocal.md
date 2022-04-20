@@ -1,12 +1,18 @@
 ---
-title: "Sourcecode of Python Threadlocal(and more)"
+title: "Python 中的 TLS 是如何实现的"
 date: 2022-04-11T16:13:49+08:00
 draft: false
 tags:
   - python
+keywords:
+  - Python 的 Threadlocal
+  - Python 的 threading.local 实现
+  - Flask 的 Local
 ---
 
 TLS(Thread Local Storage)，或者说 Threadlocal，可以说是一种并发编程的常用模式，既实现了线程之间的资源隔离，又满足了全局变量的使用。
+
+从 TLS 出发，这篇文章研究了 Python 中的 Threadlocal 是如何实现的，比如自带的 `threading.local`，再比如 Flask 框架中 `Local` 对象。
 
 # Why Threadlocal
 
@@ -314,7 +320,7 @@ class Local:
 
 # The End
 
-可以想象，Threadlocal 的写法是如何从线程安全和代码简洁等需求中演变而来的。理解了这些，就能更好地在设计和使用中做出正确的选择。
+可以想象，Threadlocal 的写法是从线程安全和代码简洁等需求中演变而来的。理解了这些，就能更好地在设计开发中做出正确的选择。
 
 ---
 
