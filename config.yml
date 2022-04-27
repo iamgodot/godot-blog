@@ -72,6 +72,10 @@ menu:
       name: About
       url: /about/
       weight: 20
+    - identifier: friends
+      name: Friends
+      url: /friends/
+      weight: 20
     - identifier: archive
       name: Archive
       url: /archive/
