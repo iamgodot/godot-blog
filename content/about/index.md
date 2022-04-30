@@ -7,7 +7,14 @@ showtoc: false
 comments: true
 ---
 
-# 关于我
+# 朋友们
+
+> 莫愁前路无知已，天下谁人不识君。
+
+- [胡涂说](https://hutusi.com/)
+- [Airing 的小屋](https://me.ursb.me)
+
+# 关于作者
 
 网名 Godot，曾北漂多年，以 Python 开发为业。
 
@@ -19,7 +26,7 @@ comments: true
 
 音乐听得很杂，周杰伦、魔岩三杰、Queen、Eagle、Tupac、Eminem 等等，另外还喜欢好听的配乐，比如胡伟立大师的作品。
 
-游戏已经很少玩了，对刺客信条情有独钟。
+游戏已经很少玩了，倒是对刺客信条情有独钟。
 
 常用工具：
 
@@ -29,17 +36,15 @@ comments: true
 - [Picgo](https://picgo.github.io/PicGo-Doc/en/guide/#picgo-is-here) 配合博客图片上传
 - [Obsidian](https://obsidian.md/) 知识库，配合 Dropbox 同步
 - [Taskito](https://taskito.io/) 任务清单 App
-- [Google Keep](https://keep.google.com/) 手机记录专用，文字图片语音一应俱全
-
-欢迎同好者一起交流探讨，联系方式见 [Home](https://iamgodot.com)
+- [Google Keep](https://keep.google.com/) 手机记录专用
 
 # 关于网站
 
-自己写过博客框架，也尝试过 Hexo、WordPress、Ghost，目前在用 Hugo，感觉尚可：
+写过框架，也曾尝试 Hexo、WordPress、Ghost，目前在用 Hugo，感觉尚可：
 
-1. 不需要导入导出各种格式的数据，统一为 Markdown 文件。
-1. 用 Typora 配合 Picgo 可以轻松完成文字编辑和图片上传。
-1. Hugo 提供了 [Shortcodes](https://gohugo.io/content-management/shortcodes/) 来渲染各类内容。
-1. 评论系统的集成也很简单：[Multi Comment systems integration](https://gohugo.io/content-management/comments/#alternatives).
+1. 没有导入导出，只有 Markdown 文件。
+1. Typora 配合 Picgo 可以轻松上传图片。
+1. 用 [Shortcodes](https://gohugo.io/content-management/shortcodes/) 扩展渲染方式，比如如 Youtube 或 Mermaid。
+1. 评论系统的集成很简单：[Multi Comment systems integration](https://gohugo.io/content-management/comments/#alternatives)。
 
-博客的仓库在[这里](https://github.com/iamgodot/godot-blog)，通过 GitHub Actions 的 [workflow](https://github.com/iamgodot/godot-blog/blob/master/.github/workflows/update.yml) 实现自动化部署。
+博客在 [GitHub](https://github.com/iamgodot/godot-blog) 维护，提交推送之后 [workflow](https://github.com/iamgodot/godot-blog/blob/master/.github/workflows/update.yml) 会自动部署更新到服务器，很方便。

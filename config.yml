@@ -27,7 +27,7 @@ params:
   ShowShareButtons: false
   ShowReadingTime: true
   ShowToc: true
-  TocOpen: false
+  TocOpen: true
   ShowBreadCrumbs: false
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
@@ -43,12 +43,17 @@ params:
 
   profileMode:
     enabled: true
-    title: "It's a leap of faith."
+    title: "It's a Leap of Faith."
     subtitle: ""
     imageUrl: "icons/profile.png"
     imageTitle: ""
     imageWidth: 120
     imageHeight: 120
+    buttons:
+      - name: About
+        url: /about/
+      - name: Archive
+        url: /archive/
 
   socialIcons:
     - name: GitHub
@@ -61,33 +66,6 @@ params:
       url: /posts/index.xml
     - name: Email
       url: mailto:godotami@gmail.com
-
-menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 10
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 20
-    - identifier: friends
-      name: Friends
-      url: /friends/
-      weight: 20
-    - identifier: archive
-      name: Archive
-      url: /archive/
-      weight: 30
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 40
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 50
 
 outputs:
   home:
