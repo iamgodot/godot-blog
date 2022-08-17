@@ -31,13 +31,14 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Sync files to server
-        uses: burnett01/rsync-deployments@5.1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        # If you're changing the branch from main,
+        # also change the `main` in `refs/heads/main`
+        # below accordingly.
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          switches: -avzr --delete
-          path: public/
-          remote_path: /home/godot/docker-compose-apps/hugo/public/
-          remote_host: ${{ secrets.DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.DEPLOY_USER }}
-          remote_key: ${{ secrets.DEPLOY_KEY }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: iamgodot/iamgodot.github.io
+          publish_branch: main
+          publish_dir: ./public
