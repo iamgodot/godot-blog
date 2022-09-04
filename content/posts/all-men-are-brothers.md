@@ -1,8 +1,10 @@
 ---
 title: "水浒传之英雄本色"
 date: 2022-01-14T17:32:27+08:00
+categories:
+  - Thoughts
 tags:
-  - 电影
+  - movie
 draft: false
 ---
 

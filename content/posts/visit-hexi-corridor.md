@@ -3,8 +3,6 @@ title: 游河西走廊
 date: 2021-08-24T01:22:26+08:00
 categories:
   - Travel
-tags:
-  - 旅行
 draft: false
 ---
 
