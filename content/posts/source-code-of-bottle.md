@@ -3,6 +3,8 @@ title: "Bottle 框架源码阅读"
 date: 2022-04-22T21:53:29+08:00
 draft: false
 mermaid: true
+categories:
+  - Code
 tags:
   - python
 keywords:

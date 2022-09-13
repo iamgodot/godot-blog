@@ -1,6 +1,8 @@
 ---
 title: "Python 中的闭包"
 date: 2022-01-29T17:55:18+08:00
+categories:
+  - Code
 tags:
   - python
 draft: false

@@ -1,6 +1,8 @@
 ---
 title: "关于 Pager"
 date: 2022-04-02T14:09:53+08:00
+categories:
+  - Code
 tags:
   - python
 draft: false

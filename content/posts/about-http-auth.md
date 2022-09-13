@@ -1,6 +1,8 @@
 ---
 title: "关于 HTTP Auth"
 date: 2022-01-28T10:16:19+08:00
+categories:
+  - Code
 tags:
   - HTTP
 draft: false

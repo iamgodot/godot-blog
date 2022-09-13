@@ -2,6 +2,8 @@
 title: "论独处"
 date: 2022-05-05T18:39:07+08:00
 draft: false
+categories:
+  - Thoughts
 tags:
   - essay
 keywords:
