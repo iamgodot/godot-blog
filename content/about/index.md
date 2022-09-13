@@ -17,7 +17,7 @@ comments: true
 
 # 关于我
 
-名 Godot，Python 开发者，北漂多年，现已南下。
+名 Godot，Python 工程师，北漂多年，现已南下。
 
 爱好写东西，包括代码。博客虽然小众，却是精神家园。
 
