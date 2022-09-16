@@ -409,6 +409,8 @@ def bar():
 
 `path` 的 Name binding 是通过 `STORE_NAME` 指令完成的，而 Import 的代码只负责 `IMPORT_NAME` 和 `IMPORT_FROM`，所以 `reload` 才会有 Module level 的限制。
 
+相比之下，`IPython` 的 `autoreload` 扩展则实用许多。不仅实现了自动重载，对模块中的 Function 和 Class 等也都同样有效。用法很简单，参考[官方文档](https://ipython.org/ipython-doc/3/config/extensions/autoreload.html)。
+
 ---
 
 *References*
