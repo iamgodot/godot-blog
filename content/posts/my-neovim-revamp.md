@@ -16,7 +16,7 @@ I have been using VSCode for while, which is great with plugins like `GitLens` a
 
 Not trying to nitpick, but I have to switch between keyboard and mouse from time to time with VSCode, which sometimes can really interrupt my train of thoughts. In addition, it doesn't feel effortless to use terminal as when I'm in a Tmux session.
 
-For whatever it's worth, I spent some hours on picking Neovim back and upgrading everything. Now it feels unprecedently smooth and efficient, and I'd like to share how I revamped my configs.
+For whatever it's worth, I spent some hours on picking Neovim back and upgrading everything. Now it feels unprecedentedly smooth and efficient, and I'd like to share how I revamped my configs.
 
 # Try it out
 
@@ -26,7 +26,7 @@ First and most important of all, a showcase:
 
 Of course, you will need `Neovim` + `Git` + `Lua` installed. It's better to have `black` + `isort` + `ruff` executables since I use them for Python linting and formatting.
 
-Then replace your `~/.config/nvim` with my [`nvim` folder](https://github.com/iamgodot/dotfiles/tree/master/nvim) and open with `nvim` to see how everything goes.
+Then replace your `~/.config/nvim` with my https://github.com/iamgodot/dotfiles/tree/master/nvim folder and open with `nvim` to see how everything goes.
 
 If it works as expected, `lazy.nvim` is going to take over and install everything shortly, then you're all set.
 
@@ -72,11 +72,11 @@ Besides coding, we're always searching stuff, therefore a powerful fuzzy finder 
 
 It has pickers, sorters and previewers. So you can find files, do live grep, and search through nearly everything such as help documents, git commits and command history. Just imagine away.
 
-BTW, this could become a test for your keymap design skill. Personally I tried my best to make use of all the leader key combinations.
+BTW, this could become a test for your keymapping design skill. I tried my best to figure out proper leader key combinations.
 
 ### LSP support
 
-This outght to be the most complex part, so I'll try to make the best sense of it and explain logically.
+This ought to be the most complex part, so I'll try to make the best sense of it and explain logically.
 
 First thing to know is LSP requires both client and server, in order to provide code functions like auto-completion. Neovim already has builtin LSP client so we just need to install servers(for our languages) and configure properly.
 
@@ -118,7 +118,7 @@ Basically there're two things. One is keep servers installed by `ensure_installe
 
 For linters and formatters, `null-ls` is a plugin which makes it every easy to setup these utilities. I setup classic `black`, `isort` as well as the new hot `ruff`, and for Lua I picked `stylua`, which seems just as opinionated as `black`.
 
-Now we have linting and formatting, and we can go to difinition etc. There's only one missing piece left called completion. To achieve that we just need `nvim-cmp` along with some helpers. Personaly I use `LuaSnip` with `friendly-snippets` as its source, and `nvim-path` for file path completion.
+Now we have linting and formatting, and we can go to definition etc. There's only one missing piece left called completion. To achieve that we just need `nvim-cmp` along with some helpers. I chose `LuaSnip` with `friendly-snippets` as its source, and `nvim-path` for file path completion.
 
 So far we've got everything covered for code functions, in which each part can be further extended to support more languages and richer functionalities.
 
