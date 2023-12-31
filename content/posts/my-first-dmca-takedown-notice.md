@@ -1,7 +1,7 @@
 ---
 title: "My First DMCA Takedown"
 date: 2022-11-25T19:04:04+08:00
-draft: false
+draft: true
 categories:
   - Thoughts
 keywords:
@@ -28,7 +28,7 @@ Wikipedia taught me the above while this page on GitHub seems more relevant and 
 
 It was an easy decision for me, but instead of notifying me with 1-day time window, GitHub took my site down directly. Then I had to argue to make them give me extra time before the whole thing sorted out.
 
-So if you encounter something like this, there's no need to panic, all you need to do is contact them and make the changes. See [here](https://docs.github.com/en/site-policy/content-removal-policies/guide-to-submitting-a-dmca-counter-notice) for counter notices if you like to fight back. 
+So if you encounter something like this, there's no need to panic, all you need to do is contact them and make the changes. See [here](https://docs.github.com/en/site-policy/content-removal-policies/guide-to-submitting-a-dmca-counter-notice) for counter notices if you like to fight back.
 
 Additionally, I wanna mention about removing contents from a Git repository. GitHub has a comprehensive [guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository), where they introduced a tool called `git filter-repo`. My understanding of it's a better substitute for `git filter-branch`, which is not recommended anymore due to some safety issues. So essentially what it does is to rewrite the whole history by eliminating related files as well as the after empty commits, and updating all the commit hashes.
 

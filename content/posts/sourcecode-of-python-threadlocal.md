@@ -1,7 +1,7 @@
 ---
 title: "Python 中的 TLS 是如何实现的"
 date: 2022-04-11T16:13:49+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
@@ -43,7 +43,7 @@ nums = []
 def f():
     mydata.number = 11
     nums.append(mydata.number)
-    
+
 t = Thread(target=f)
 t.start()
 t.join()
@@ -64,7 +64,7 @@ def _patch(self):
         yield
 
 class local:
-	...   
+	...
     def __getattribute__(self, name):
         with _patch(self):
             return object.__getattribute__(self, name)
@@ -144,7 +144,7 @@ class local:
 class MyLocal(local):
     def __init__(self, /, **kw):
         self.__dict__.update(kw)
-        
+
 mydata = MyLocal(color='red')
 ```
 
@@ -174,7 +174,7 @@ def _patch(self):
 ```python
 class MyLocal(local):
     __slots__ = 'number'
-    
+
 mydata = MyLocal()
 mydata.number = 42  # 这里的 number 是所有线程共享的
 ```

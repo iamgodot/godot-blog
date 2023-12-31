@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - network
-draft: false
+draft: true
 ---
 
 服务器能做什么？在 [Awesome-Selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) 里可以找到上百种答案。如果带宽不算太小的话，那么 BT 下载是个不错的尝试。借着 [No Time to Die](https://movie.douban.com/subject/20276229/) 的上映我开始重温 007 系列，从皇家赌场到幽灵党，在服务器上的下载体验是很好的。

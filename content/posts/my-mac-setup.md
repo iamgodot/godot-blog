@@ -1,7 +1,7 @@
 ---
 title: "My Mac Setup"
 date: 2023-04-13T17:45:41+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:

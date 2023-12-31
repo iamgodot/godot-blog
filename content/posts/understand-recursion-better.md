@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - dsa
-draft: false
+draft: true
 ---
 
 在 [Simple Recursion](/posts/simple-recursion) 之后，我一度把递归当作一种算法。但通过比较 Divide and Conquer 和 Dynamic Programming，我才发现之前的理解有点问题。

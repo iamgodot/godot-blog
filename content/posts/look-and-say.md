@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - dsa
-draft: false
+draft: true
 ---
 
 无意中看到一种叫 look-and-say 的数列，很有意思，有点儿 Fibonacci 的感觉。数列如下：
@@ -55,7 +55,7 @@ def find_next(num: str):
         result += f'{count}{cur}'
         cur = char
         count = 1
-        
+
     return f'{result}{count}{cur}'
 ```
 
@@ -73,7 +73,7 @@ def find_next(num: str):
             cur += 1
         result += str(cur - start) + num[start]
         start = cur
-    
+
     return result
 ```
 

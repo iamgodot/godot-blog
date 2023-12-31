@@ -1,7 +1,7 @@
 ---
 title: "感染，以及恢复后的第一次冥想"
 date: 2023-03-08T22:45:13+08:00
-draft: false
+draft: true
 categories:
   - Thoughts
 tags:

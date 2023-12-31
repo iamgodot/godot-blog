@@ -3,7 +3,7 @@ title: The Art of Readable Code
 date: 2020-10-31T15:54:05+08:00
 categories:
   - Code
-draft: false
+draft: true
 ---
 
 最近读了《编写可读代码的艺术》这本书，收获良多。

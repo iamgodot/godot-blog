@@ -1,7 +1,7 @@
 ---
 title: "Python Import 源码阅读"
 date: 2022-09-10T18:20:40+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
@@ -254,7 +254,7 @@ def _lock_unlock_module(name):
 ```python
 class PathFinder:
     ...
-    
+
     @classmethod
     def _get_spec(cls, fullname, path, target=None):
         namespace_path = []
@@ -322,7 +322,7 @@ import foo
 
 ```python
 def _load_unlocked(spec):
-    # 这里的 initializing 对应了前面的 _lock_unlock_module 
+    # 这里的 initializing 对应了前面的 _lock_unlock_module
     spec._initializing = True
     try:
         # 现在已经得到了 Spec，准备进行 Load
@@ -388,7 +388,7 @@ print(foo.a)
 # foo.py
 def bar():
     print('bar')
-    
+
 # 如果 import foo，然后这样使用 foo.bar()。Reload 是 OK 的。
 # 如果再加上 from foo import bar，那么即使改变 bar 的代码再 reload(foo)，bar() 还是会保持原有的效果，即打印 `bar` 字符串。
 ```

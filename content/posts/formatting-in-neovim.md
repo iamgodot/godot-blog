@@ -1,13 +1,15 @@
 ---
 title: "Formatting in Neovim"
 date: 2023-04-20T16:05:53+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
   - Neovim format on save
   - Neovim lsp format
 ---
+
+> “Mock across architecturally significant boundaries, but not within those boundaries.”
 
 With Neovim and `null-ls` plugin we can make code formatting work like a charm, as I stated in [My Neovim Revamp](./my-neovim-revamp.md) previously. While I was happily enjoying it, I did some tweaking for a little more convenience, such as:
 
@@ -48,24 +50,24 @@ In addition, you can replace default arguments totally with `args`, by following
 BTW, I found a few tricks regarding tabs&spaces:
 
 - In Neovim:
-  
+
   - Use `:retab` to replace tabs with spaces(number of spaces defined by `tabstop`).
-  
+
   - Use `:set list` to show tabs marking as `>` and trailing spaces as `-`.
 
 - In Shell:
-  
+
   - Use `sed` to convert tabs to spaces in a bunch of files at one time.
-  
+
   - On Linux: `sed -i "s/\t//g" /path/to/files`.
-  
+
   - On macOS: `sed -i "" "s/\t//g" /path/to/files`. Here `-i` stands for extension rather than in-place editing.
 
 # Format conditionally
 
-Auto-formatting is sweet, but what if I don't want it? When I'm reading some source code or working on a shared project, I want things kept as they were. 
+Auto-formatting is sweet, but what if I don't want it? When I'm reading some source code or working on a shared project, I want things kept as they were.
 
-Toggling formatters on&off can be annoying, is there a smarter way? 
+Toggling formatters on&off can be annoying, is there a smarter way?
 
 Yes, there sure is. Turns out `null-ls` has a `runtime_condition` setting to force it to check whether a formatter should run for the current buffer.
 
@@ -88,15 +90,3 @@ Just like this, you can easily split things up with a suitable condition stateme
 - [params](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/MAIN.md#params)
 
 Hope these tips can be helpful :)
-
-
-
-
-
-
-
-
-
-
-
-

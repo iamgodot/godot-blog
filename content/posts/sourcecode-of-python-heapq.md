@@ -6,7 +6,7 @@ categories:
 tags:
   - python
   - dsa
-draft: false
+draft: true
 keywords:
   - Python heapq 模块
   - Python heapq 用法
@@ -139,7 +139,7 @@ def merge(*iterables, key=None, reverse=False):
             yield value
             yield from next.__self__
         return
-    
+
     ...
 ```
 
@@ -158,7 +158,7 @@ def merge(*iterables, key=None, reverse=False):
 ```python
 def nsmallest(n, iterable, key=None):
     ...
-    
+
     # When key is none, use simpler decoration
     if key is None:
         it = iter(iterable)
@@ -178,7 +178,7 @@ def nsmallest(n, iterable, key=None):
                 order += 1
         result.sort()
         return [elem for (elem, order) in result]
-    
+
     ...
 
 ```

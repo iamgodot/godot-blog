@@ -3,7 +3,7 @@ title: 游河西走廊
 date: 2021-08-24T01:22:26+08:00
 categories:
   - Travel
-draft: false
+draft: true
 ---
 
 [从兰州离开之后](/posts/visit-lanzhou)，终于踏上了心系已久的河西走廊之旅。自从看了[同名纪录片](https://www.bilibili.com/bangumi/media/md20790/)，才真正领略到大西北的厚重，也开始了解，早在汉武帝的统治下，狭长的河西通道就已经被慢慢打开，并一步步开启了中国的历史新篇。

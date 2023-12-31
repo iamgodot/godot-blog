@@ -5,7 +5,7 @@ categories:
   - Thoughts
 tags:
   - netflix
-draft: false
+draft: true
 ---
 
 [Pandemic: How to Prevent an Outbreak](https://movie.douban.com/subject/34935806/) 是 Netflix 出品的一部纪录片，共有六集。这部短剧在 2020 年初播出，正好赶上了新冠的爆发。它告诉人们，疫情并非大自然的偷袭，而是暴风雨按部就班的来临。

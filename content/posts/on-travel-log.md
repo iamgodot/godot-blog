@@ -5,7 +5,7 @@ categories:
   - Thoughts
 tags:
   - essay
-draft: false
+draft: true
 ---
 
 通常写东西不会让我很为难，虽然有时也会酝酿许久，但绝没有像游记这样令我如此困惑。

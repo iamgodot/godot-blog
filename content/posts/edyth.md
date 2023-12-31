@@ -5,7 +5,7 @@ categories:
   - Thoughts
 tags:
   - essay
-draft: false
+draft: true
 ---
 
 愿逝者安息。

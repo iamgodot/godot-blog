@@ -1,7 +1,7 @@
 ---
 title: "Sum of Total Strength of Wizards"
 date: 2022-07-26T10:41:55+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
@@ -169,12 +169,3 @@ def total_strength(strength):
 - [巫师的总力量和 - Leetcode](https://leetcode.cn/problems/sum-of-total-strength-of-wizards/)：原题参考。
 - [Prefix Sum](https://lctemplates.xyli.codes/en/latest/prefix-sum.html#prefix-sum-of-prefix-sum)：综合讲解前缀和，上面的公式推导即出自这里。
 - [子数组的最小值之和 - Leetcode](https://leetcode.cn/problems/sum-of-subarray-minimums/)：另一道类似的题目，主要是针对单调栈的应用。
-
-
-
-
-
-
-
-
-

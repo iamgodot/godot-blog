@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - python
-draft: false
+draft: true
 ---
 
 Python 的字符串自带了三种判断字符是否为数字的方法，但实际用处却相差很多。

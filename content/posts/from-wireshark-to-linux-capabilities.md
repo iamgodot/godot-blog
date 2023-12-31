@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - linux
-draft: false
+draft: true
 ---
 
 Tcpdump 和 Wireshark 是抓包必备的程序，但是由于需要截取网络数据包，所以在 Linux 下必须以 root 的身份来运行。每次都 sudo 执行不方便也并不安全（对 Wireshark 来说捉包只是一小部分功能），解决方案当然有，在寻找的过程中我了解到了 Capabilities 的冰山一角。

@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - python
-draft: false
+draft: true
 keywords:
   - Python pager
   - Python help pager

@@ -1,7 +1,7 @@
 ---
 title: "读《矛盾论》"
 date: 2022-06-14T21:52:58+08:00
-draft: false
+draft: true
 categories:
   - Thoughts
 tags:

@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - HTTP
-draft: false
+draft: true
 keywords:
   - HTTP 认证
   - OAuth 认证
@@ -75,7 +75,7 @@ MAC 有个前提是通信双方共享了某个 Secret key，而在 HMAC 相当�
 Credential 的校验一般只是认证的前半部分，通过之后服务器会签发一个凭证给用户，之后一段时间内便不再需要验证了。这么做的主要原因就是为了方便，因为场景中总是存在会话，没人喜欢在过程中每次都要输入密码，类似 sudo. API 调用认证就不会这么做，原因也是没有明显的会话场景。说回凭证，通常是以 Token 的形式出现，HTTP 的认证框架中的 Bearer Auth 就是把 Token 放在 Header 中传递的：`Authorization: Bearer ...`. 当然 Bearer 主要是为了配合 OAuth 2.0，凭证也不一定就是 Token，有两种方式：
 
 1. Cookie: 客户端把 SessionID 放在 Cookie 里面，服务器收到之后检查是否有对应的 Active session. 这样服务端可以完全控制 Session，但你知道，Cookie 的限制是很多的
-2. Token: 状态信息都保存在 Token 里，所以服务器是 Stateless 的（至少对于认证来说）。客户端可以把 Token 放在 Header(standarized) 或者 Payload 里发送。好处很明显，服务端减了负，但是控制上就减弱了，比如不能随时 Invalidate 一个 Token; 另外就是 Token 不受局限，可以直接跨域
+2. Token: 状态信息都保存在 Token 里，所以服务器是 Stateless 的（至少对于认证来说）。客户端可以把 Token 放在 Header(standardized) 或者 Payload 里发送。好处很明显，服务端减了负，但是控制上就减弱了，比如不能随时 Invalidate 一个 Token; 另外就是 Token 不受局限，可以直接跨域
 
 JWT 是一种很流行的 Token-based 的解决方案，简单来说就是校验通过发给客户端 Token，之后只需要检查 Token 合法性就好了，其中还可以设置 scope 和 expiration. 当然用 JWT 也会遇到控制不足的问题，一种解决办法是 Invalidate refresh token，然后等待 access token 过期（这就要求 expiration 不能太长）。如果有更复杂的需求，可能还是要自定义实现 Token.
 
@@ -109,9 +109,11 @@ Gittalk 是一款纯前端的评论应用，最大的特点是利用 GitHub Issu
 - [HTTP authentication - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 
 - [Digest access authentication - Wikipedia](https://en.wikipedia.org/wiki/Digest_access_authentication)
+
 - [Message authentication code - Wikipedia](https://en.wikipedia.org/wiki/Message_authentication_code)
 
 - [HTTP API 认证授权术 - CoolShell](https://coolshell.cn/articles/19395.html)
 
 - [OAuth 2.0 的四种方式 - 阮一峰](https://www.ruanyifeng.com/blog/2019/04/oauth-grant-types.html)
+
 - [Authorizing OAuth Apps - GitHub](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)

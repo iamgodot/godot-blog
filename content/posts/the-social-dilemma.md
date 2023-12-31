@@ -1,11 +1,11 @@
 ---
 title: The Social Dilemma
 date: 2020-10-07T22:25:35+08:00
-categories: 
+categories:
   - Thoughts
 tags:
   - netflix
-draft: false
+draft: true
 ---
 
 [The Social Dilemma](https://movie.douban.com/subject/34960008/) 是一部 Netflix 原创纪录片，讲述了社交平台是如何通过大数据算法分析人们的行为偏好，并利用广告推送获利的。这一切高速发展到今天，已经脱离设计者的初衷，把无数用户变成了资本交易的砝码。

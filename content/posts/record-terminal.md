@@ -6,7 +6,7 @@ categories:
 tags:
   - project
   - python
-draft: false
+draft: true
 ---
 
 这几天在做一个 [CLI 项目](https://github.com/iamgodot/py-tldr)，因为涉及到命令行操作，所以想录制一段 GIF 放在 README 中展示。
@@ -62,4 +62,3 @@ draft: false
 
 - [Asciinema - 录制终端工具](https://github.com/asciinema/asciinema)
 - [Gifcast - 转换 cast 文件为 GIF](https://dstein64.github.io/gifcast/)
-

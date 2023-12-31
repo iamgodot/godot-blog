@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - linux
-draft: false
+draft: true
 ---
 
 这是一篇使用（过） Linux Xorg without any DE 以及笔记本外接键盘的人才能理解其中辛酸苦痛的抒情科普文。

@@ -1,7 +1,7 @@
 ---
 title: "我为什么开始用 Logseq"
 date: 2022-10-27T17:29:51+08:00
-draft: false
+draft: true
 categories:
   - Thoughts
 keywords:
@@ -23,7 +23,7 @@ keywords:
 
 Notion 的创新应该算是具有划时代的意义了，比如 Page 和 Block 的概念也在 Logseq 中沿用。在我的印象里，除了偶尔的网络问题，Notion 是很完美的，甚至因为功能过于复杂和强大，让我后来有些望而却步了。
 
-# With Obsidian          
+# With Obsidian
 
 除了 Zettelkasten，本地存储是我切换到 Obsidian 的另外一个重要原因。Notion 对网络的依赖让我认识到本地数据的重要性，再加上云端同步，Markdown + Local files + Dropbox 成为了我的笔记标配。
 
@@ -33,7 +33,7 @@ Notion 的创新应该算是具有划时代的意义了，比如 Page 和 Block 
 
 时间一长，我又失去了做笔记的热情。
 
-# With Logseq          
+# With Logseq
 
 初看 Logseq 让我觉得很有 Notion + Org-mode 的感觉（曾经试图研究过后者，最后算是弃坑了吧，不过无论 Org-mode 还是 Emacs 都非常了不起），但抛开工具本身，它的设计理念解答了我很久以来的困扰。
 

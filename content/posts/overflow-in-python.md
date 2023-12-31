@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - python
-draft: false
+draft: true
 ---
 
 犹记得在 Java 中，int 占用 4 bytes 所以大小限制在 -2^32 和 2^32 -1 之间，如果考虑到溢出的情况，就要用 long 类型来转换。
@@ -25,7 +25,7 @@ In [9]: m = 2 ** 100000
 
 In [10]: m*.1
 ---------------------------------------------------------------------------
-OverflowError                             
+OverflowError
 Traceback (most recent call last) <ipython-input-10-03cfc6457eba> in <module>
 ----> 1 m*.1
 

@@ -5,7 +5,7 @@ categories:
   - Code
 tags:
   - python
-draft: false
+draft: true
 keywords:
   - Python 闭包
   - Python 的 Closure 是什么

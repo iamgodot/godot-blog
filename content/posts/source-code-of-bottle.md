@@ -1,7 +1,7 @@
 ---
 title: "Bottle 框架源码阅读"
 date: 2022-04-22T21:53:29+08:00
-draft: false
+draft: true
 mermaid: true
 categories:
   - Code
@@ -171,7 +171,7 @@ class LocalResponse(BaseResponse):
     _cookies = _local_property()
     _headers = _local_property()
     body = _local_property()
-    
+
 ...
 
 request = LocalRequest()
@@ -264,10 +264,10 @@ def template(*args, **kwargs):
 ```python
 class MakoTemplate(BaseTemplate):
     ...
-    
+
 class Jinja2Template(BaseTemplate):
     ...
-    
+
 class SimpleTemplate(BaseTemplate):
     ...
 ```

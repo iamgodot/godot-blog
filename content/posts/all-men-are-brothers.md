@@ -5,7 +5,7 @@ categories:
   - Thoughts
 tags:
   - movie
-draft: false
+draft: true
 ---
 
 没想到 2021 年的第一篇博客是关于电影的，感觉很奇特。平时看电影最多就是上豆瓣评个分抖两句机灵，这次却想写一整篇，大概对于喜欢的东西废话就会变多吧。

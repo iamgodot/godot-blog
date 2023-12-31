@@ -1,7 +1,7 @@
 ---
 title: "My Neovim Revamp"
 date: 2023-04-05T20:31:52+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Python 中的异常"
 date: 2022-09-15T18:02:18+08:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
@@ -168,10 +168,10 @@ class ExceptionManager:
     def __init__(self, exception, handler):
         self.exception = exception
         self.handler = handler
-    
+
     def __enter__(self):
         return self
-    
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         if exc_type == self.exception:
             self.handler(exc_val)

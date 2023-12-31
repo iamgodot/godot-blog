@@ -5,7 +5,7 @@ categories:
   - Thoughts
 tags:
   - essay
-draft: false
+draft: true
 ---
 
 近来在[中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)里发现不少同道中人，借这个机会重新思考了独立博客这件事。
@@ -48,4 +48,3 @@ draft: false
 ---
 
 如今的独立博客早已不是主流，但依然不断地有人出现并坚持在这条路上。自由独立地表达内心，我想这就是它最大的意义。
-
