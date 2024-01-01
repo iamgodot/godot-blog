@@ -1,16 +1,14 @@
 baseURL: https://iamgodot.com
 languageCode: en-us
 title: Godot's Blog
+theme:
+  - github.com/adityatelange/hugo-PaperMod
 
 paginate: 5
 
 security:
   exec:
     osEnv: ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|HOME|SSH_AUTH_SOCK|USERPROFILE|XDG_CONFIG_HOME|HTTP_PROXY|HTTPS_PROXY)$']
-
-module:
-  imports:
-    - path: github.com/adityatelange/hugo-PaperMod
 
 params:
   defaultTheme: light

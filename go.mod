@@ -1,8 +1,5 @@
-module github.com/iamgodot/godot-blog
+module iamgodot.com
 
-go 1.17
+go 1.20
 
-require (
-	github.com/adityatelange/hugo-PaperMod v0.0.0-20231231045754-045c08496d61 // indirect
-	github.com/divinerites/plausible-hugo v1.17.2 // indirect
-)
+require github.com/adityatelange/hugo-PaperMod v0.0.0-20231231045754-045c08496d61 // indirect
