@@ -21,8 +21,8 @@ params:
     debug: false
     gitstar: false
 
-  defaultTheme: dark
-  disableThemeToggle: true
+  defaultTheme: light
+  disableThemeToggle: false
 
   ShowShareButtons: false
   ShowReadingTime: true
@@ -32,7 +32,7 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
 
-  comments: true
+  comments: false
 
   assets:
     favicon: icons/favicon.ico
@@ -41,31 +41,11 @@ params:
     apple_touch_icon: icons/apple-touch-icon.png
     android-chrome: icons/android-chrome-512x512.png
 
-  profileMode:
-    enabled: true
-    title: "It's a Leap of Faith."
-    subtitle: ""
-    imageUrl: "icons/profile.png"
-    imageTitle: ""
-    imageWidth: 120
-    imageHeight: 120
-    buttons:
-      - name: About
-        url: /about/
-      - name: Archive
-        url: /archive/
-
-  socialIcons:
-    - name: GitHub
-      url: https://github.com/iamgodot
-    - name: Twitter
-      url: https://twitter.com/iamgodot_
-    - name: Telegram
-      url: https://t.me/godotami
-    - name: RSS
-      url: /posts/index.xml
-    - name: Email
-      url: mailto:godotami@gmail.com
+  homeInfoParams:
+    Title: One cannot think without writing.
+    Content: |
+      - I'm a developer who loves to write.
+      - Check [*here*](/about) to know a bit more about me.
 
 outputs:
   home:
