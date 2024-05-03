@@ -8,7 +8,10 @@ paginate: 5
 
 security:
   exec:
-    osEnv: ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|HOME|SSH_AUTH_SOCK|USERPROFILE|XDG_CONFIG_HOME|HTTP_PROXY|HTTPS_PROXY)$']
+    osEnv:
+      [
+        "(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|HOME|SSH_AUTH_SOCK|USERPROFILE|XDG_CONFIG_HOME|HTTP_PROXY|HTTPS_PROXY)$",
+      ]
 
 params:
   defaultTheme: light
@@ -44,3 +47,8 @@ outputs:
     - JSON
 
 googleAnalytics: UA-157042624-1
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
