@@ -3,7 +3,7 @@ title: "Implement Dark Mode With React"
 date: 2024-05-03T11:10:08-07:00
 draft: false
 categories:
-  - Code
+  - Development
 tags:
   - frontend
 ---
