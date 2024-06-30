@@ -1,6 +1,8 @@
 body {
-    font-family: 'Merriweather', 'LXGW WenKai', 'SimSong', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: "Fira Code", "LXGW WenKai", "SimSong", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
 }
-code, span {
-    font-family: 'Fira Code', monospace;
+code,
+span {
+  font-family: "Fira Code", monospace;
 }
