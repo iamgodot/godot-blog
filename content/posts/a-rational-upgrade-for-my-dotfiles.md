@@ -1,7 +1,7 @@
 ---
 title: "A Rational Upgrade for My Dotfiles"
 date: 2024-07-24T11:06:41-07:00
-draft: false
+draft: true
 categories:
   - Code
 tags:

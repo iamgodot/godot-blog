@@ -1,7 +1,7 @@
 ---
 title: "History Setting in Zsh"
 date: 2024-06-29T22:05:55-07:00
-draft: false
+draft: true
 categories:
   - Code
 ---

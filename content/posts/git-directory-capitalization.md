@@ -1,7 +1,7 @@
 ---
 title: "Change the Capitalization of a Direcotry with Git"
 date: 2024-05-19T22:51:26-07:00
-draft: false
+draft: true
 categories:
   - Code
 tags:
