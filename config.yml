@@ -4,7 +4,8 @@ title: Godot's Blog
 theme:
   - github.com/adityatelange/hugo-PaperMod
 
-paginate: 5
+pagination:
+  pagerSize: 5
 
 security:
   exec:
