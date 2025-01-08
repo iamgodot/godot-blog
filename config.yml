@@ -1,6 +1,6 @@
 baseURL: https://blog.iamgodot.com
 languageCode: en-us
-title: Godot's Blog
+title: 多随笔
 theme:
   - github.com/adityatelange/hugo-PaperMod
 
@@ -36,10 +36,11 @@ params:
     android-chrome: icons/android-chrome-512x512.png
 
   homeInfoParams:
-    Title: One cannot think without writing.
+    Title: 溪水慢慢流淌，也能汇聚成宽广的大海
     Content: |
-      - I'm a developer who loves to write.
-      - Check [*here*](/about) to know a bit more about me.
+      - 时隔多年才发现，有一片中文随笔的自留地，是一件幸福的事。
+      - 行文无忌，随心乱语，战天斗地，不为功利。
+      - 如果有兴趣，可以再看[*这里*](https://iamgodot.com)。
 
 outputs:
   home:
