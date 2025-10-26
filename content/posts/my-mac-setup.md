@@ -1,12 +1,9 @@
 ---
-title: "My Mac Setup"
+title: My Mac Setup
 date: 2023-04-13T17:45:41+08:00
 draft: true
 categories:
   - Code
-tags:
-  - How to set up a macbook
-  - Python for mac
 ---
 
 Thanks to my lovely gf, I have been able to get my hands on an Apple M2 lately. Coming from Arch with i3, I thought I'd get to this more UI-based and mouse-involved operating system, which seems like a degradation. However, after some digging, it becomes really comfortable for me being both elegant and efficient.
