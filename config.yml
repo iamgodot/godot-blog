@@ -15,11 +15,13 @@ security:
       ]
 
 params:
+  DateFormat: Jan 2, 2006
+
   defaultTheme: light
   disableThemeToggle: false
 
   ShowShareButtons: false
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowToc: true
   TocOpen: false
   ShowBreadCrumbs: false
@@ -40,6 +42,17 @@ params:
     Content: |
       - 有一片中文随笔的自留地，是一件幸福的事。
       - 此去经年，铅华尽洗，一如往昔。
+
+menu:
+  main:
+    - identifier: archive
+      name: Archive
+      url: /archive/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
 
 outputs:
   home:
