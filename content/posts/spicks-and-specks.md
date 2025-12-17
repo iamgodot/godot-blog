@@ -1,8 +1,6 @@
 ---
 title: "Spicks and Specks"
 date: 2022-01-20T15:06:37+08:00
-categories:
-  - Thoughts
 tags:
   - excerpt
 draft: false

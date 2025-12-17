@@ -2,8 +2,6 @@
 title: "奶奶"
 date: 2024-02-16T22:44:08-08:00
 draft: false
-categories:
-  - Thoughts
 ---
 
 奶奶走了。

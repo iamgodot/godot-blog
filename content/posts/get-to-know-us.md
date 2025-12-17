@@ -2,8 +2,6 @@
 title: "读《近距离看美国》"
 date: 2024-01-28T14:52:09-08:00
 draft: false
-categories:
-  - Thoughts
 tags:
   - reading-note
 ---

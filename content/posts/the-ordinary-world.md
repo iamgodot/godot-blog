@@ -2,8 +2,6 @@
 title: "读《平凡的世界》"
 date: 2024-08-26T15:52:11-07:00
 draft: false
-categories:
-  - Thoughts
 tags:
   - reading-note
 ---
